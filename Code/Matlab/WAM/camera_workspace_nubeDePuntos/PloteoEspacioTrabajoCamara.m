@@ -1,5 +1,5 @@
 %% Calculo de aristas para el poliedro
-addpath('funciones_matlab')
+% addpath('funciones_matlab')
 
 % limiteHorizontal = 40;
 % limiteVerticalBajo = 10;

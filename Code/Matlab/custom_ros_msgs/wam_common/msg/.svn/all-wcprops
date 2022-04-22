@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg
+END
+RTCartVel.msg
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTCartVel.msg
+END
+RTOrtnPos.msg
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTOrtnPos.msg
+END
+RTJointPos.msg
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTJointPos.msg
+END
+RTPose.msg
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTPose.msg
+END
+RTOrtnVel.msg
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTOrtnVel.msg
+END
+RTJointTrq.msg
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTJointTrq.msg
+END
+RTJointVel.msg
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTJointVel.msg
+END
+RTCartPos.msg
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/msg/RTCartPos.msg
+END

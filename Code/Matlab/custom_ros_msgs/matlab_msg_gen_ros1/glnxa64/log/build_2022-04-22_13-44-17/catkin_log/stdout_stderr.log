@@ -1,0 +1,1040 @@
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/etc/catkin/profile.d/99.roslisp.sh: line 21: /mathworks/devel/bat/B3p2/build/3p/derived/glnxa64/ros1/python_venv/bin/python3: No such file or directory
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel
+-- Using CMAKE_PREFIX_PATH: /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022a/toolbox/ros/mlroscpp/custom_messages
+-- This workspace overlays: /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022a/toolbox/ros/mlroscpp/custom_messages
+-- Found PythonInterp: /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 (found suitable version "3.9.12", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3
+-- Using Debian Python package layout
+-- Found PY_em: /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/lib/python3.9/site-packages/em.py  
+-- Using empy: /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/lib/python3.9/site-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: off
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/env.sh: 1: /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/etc/catkin/profile.d/99.roslisp.sh: /mathworks/devel/bat/B3p2/build/3p/derived/glnxa64/ros1/python_venv/bin/python3: not found
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 2 packages in topological order:
+-- ~~  - wam_common
+-- ~~  - wam_msgs
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'wam_common'
+-- ==> add_subdirectory(wam_common)
+-- Disabling the following message generators: geneus;genlisp;gennodejs
+-- Using these message generators: gencpp;genpy
+-- wam_common: 8 messages, 20 services
+-- +++ processing catkin package: 'wam_msgs'
+-- ==> add_subdirectory(wam_msgs)
+-- Disabling the following message generators: geneus;genlisp;gennodejs
+-- Using these message generators: gencpp;genpy
+-- wam_msgs: 1 messages, 0 services
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    Boost_NAMESPACE
+
+
+-- Build files have been written to: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build
+[1/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/ChangeMinirobot.srv
+[2/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTJointTrq.msg
+[3/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/CouplingWam.srv
+[4/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandSpreadVel.srv
+[5/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/DirMove.srv
+[6/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/Wrist.srv
+[7/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/GravityComp.srv
+[8/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/IdleWam.srv
+[9/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTOrtnPos.msg
+[10/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/Hold.srv
+[11/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTJointVel.msg
+[12/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTCartPos.msg
+[13/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandFingerPos.srv
+[14/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTOrtnVel.msg
+[15/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/CartPosMove.srv
+[16/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTPose.msg
+[17/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandFingerVel.srv
+[18/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandGraspVel.srv
+[19/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/JointMove.srv
+[20/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/Move.srv std_msgs/Float32MultiArray:std_msgs/MultiArrayDimension:std_msgs/MultiArrayLayout:geometry_msgs/Point
+[21/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandGraspPos.srv
+[22/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/BHandSpreadPos.srv
+[23/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTCartVel.msg
+[24/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/OrtnMove.srv
+[25/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/msg/RTJointPos.msg
+[26/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/Pose.srv std_msgs/MultiArrayDimension:geometry_msgs/Pose:std_msgs/MultiArrayLayout:geometry_msgs/Quaternion:geometry_msgs/Point:std_msgs/Float32MultiArray
+[27/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_msgs && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_msgs /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_msgs/msg/Location.msg std_msgs/Header:geometry_msgs/Point
+[28/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/PoseMove.srv geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point
+[29/122] cd /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/wam_common && /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build/catkin_generated/env_cached.sh /home/wamremote/.matlab/R2022a/ros1/glnxa64/venv/bin/python3 /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py wam_common /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/srv/WristRotate.srv
+[30/122] Generating Python from MSG wam_common/RTCartPos
+[31/122] Generating Python from MSG wam_common/RTPose
+[32/122] Generating Python from MSG wam_common/RTCartVel
+[33/122] Generating Python from MSG wam_common/RTOrtnPos
+[34/122] Generating Python code from SRV wam_common/BHandFingerPos
+[35/122] Generating Python from MSG wam_common/RTJointTrq
+[36/122] Generating Python from MSG wam_common/RTOrtnVel
+[37/122] Generating Python from MSG wam_msgs/Location
+[38/122] Generating Python code from SRV wam_common/BHandFingerVel
+[39/122] Generating Python from MSG wam_common/RTJointVel
+[40/122] Generating Python from MSG wam_common/RTJointPos
+[41/122] Generating C++ code from wam_msgs/Location.msg
+[42/122] Generating Python code from SRV wam_common/BHandGraspPos
+[43/122] Generating Python code from SRV wam_common/BHandGraspVel
+[44/122] Generating Python code from SRV wam_common/BHandSpreadVel
+[45/122] Generating Python code from SRV wam_common/BHandSpreadPos
+[46/122] Generating Python code from SRV wam_common/ChangeMinirobot
+[47/122] Generating Python code from SRV wam_common/CouplingWam
+[48/122] Generating Python code from SRV wam_common/DirMove
+[49/122] Generating Python code from SRV wam_common/GravityComp
+[50/122] Generating Python code from SRV wam_common/CartPosMove
+[51/122] Generating Python code from SRV wam_common/IdleWam
+[52/122] Generating Python code from SRV wam_common/Hold
+[53/122] Generating Python code from SRV wam_common/JointMove
+[54/122] Generating Python code from SRV wam_common/OrtnMove
+[55/122] Generating Python code from SRV wam_common/WristRotate
+[56/122] Generating Python code from SRV wam_common/Pose
+[57/122] Generating Python code from SRV wam_common/Move
+[58/122] Generating Python code from SRV wam_common/Wrist
+[59/122] Generating Python code from SRV wam_common/PoseMove
+[60/122] Generating C++ code from wam_common/RTJointTrq.msg
+[61/122] Generating C++ code from wam_common/RTJointPos.msg
+[62/122] Generating C++ code from wam_common/RTCartPos.msg
+[63/122] Generating C++ code from wam_common/RTCartVel.msg
+[64/122] Generating C++ code from wam_common/RTJointVel.msg
+[65/122] Generating Python srv __init__.py for wam_common
+[66/122] Generating C++ code from wam_common/RTOrtnPos.msg
+[67/122] Generating Python msg __init__.py for wam_common
+[68/122] Generating C++ code from wam_common/RTOrtnVel.msg
+[69/122] Generating C++ code from wam_common/RTPose.msg
+[70/122] Generating C++ code from wam_common/BHandFingerVel.srv
+[71/122] Generating C++ code from wam_common/BHandFingerPos.srv
+[72/122] Generating C++ code from wam_common/BHandGraspPos.srv
+[73/122] Generating C++ code from wam_common/BHandSpreadPos.srv
+[74/122] Generating C++ code from wam_common/CartPosMove.srv
+[75/122] Generating C++ code from wam_common/BHandGraspVel.srv
+[76/122] Generating C++ code from wam_common/BHandSpreadVel.srv
+[77/122] Generating C++ code from wam_common/ChangeMinirobot.srv
+[78/122] Generating C++ code from wam_common/CouplingWam.srv
+[79/122] Generating C++ code from wam_common/DirMove.srv
+[80/122] Generating C++ code from wam_common/Hold.srv
+[81/122] Generating C++ code from wam_common/GravityComp.srv
+[82/122] Generating Python msg __init__.py for wam_msgs
+[83/122] Generating C++ code from wam_common/Move.srv
+[84/122] Generating C++ code from wam_common/OrtnMove.srv
+[85/122] Generating C++ code from wam_common/JointMove.srv
+[86/122] Generating C++ code from wam_common/IdleWam.srv
+[87/122] Generating C++ code from wam_common/PoseMove.srv
+[88/122] Generating C++ code from wam_common/Wrist.srv
+[89/122] Generating C++ code from wam_common/Pose.srv
+[90/122] Generating C++ code from wam_common/WristRotate.srv
+[91/122] Building CXX object wam_msgs/CMakeFiles/wam_msgs_matlab.dir/src/wam_msgs_Location_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_msgs/src/wam_msgs_Location_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[92/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTCartPos_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTCartPos_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[93/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTOrtnPos_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTOrtnPos_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[94/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTOrtnVel_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTOrtnVel_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[95/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTCartVel_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTCartVel_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[96/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTJointTrq_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTJointTrq_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[97/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTPose_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTPose_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[98/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTJointVel_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTJointVel_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[99/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_RTJointPos_message.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_RTJointPos_message.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[100/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandGraspPos_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandGraspPos_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[101/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandFingerVel_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandFingerVel_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[102/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandFingerPos_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandFingerPos_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[103/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandSpreadVel_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandSpreadVel_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[104/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandGraspVel_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandGraspVel_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[105/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_BHandSpreadPos_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_BHandSpreadPos_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[106/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_ChangeMinirobot_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_ChangeMinirobot_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[107/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_CouplingWam_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_CouplingWam_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[108/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_Hold_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_Hold_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[109/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_GravityComp_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_GravityComp_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[110/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_DirMove_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_DirMove_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[111/122] Linking CXX shared library /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/libwam_msgs_matlab.so
+[112/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_CartPosMove_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_CartPosMove_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[113/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_IdleWam_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_IdleWam_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[114/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_JointMove_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_JointMove_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[115/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_Move_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_Move_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[116/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_PoseMove_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_PoseMove_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[117/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_OrtnMove_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_OrtnMove_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[118/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_WristRotate_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_WristRotate_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[119/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_Wrist_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_Wrist_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[120/122] Building CXX object wam_common/CMakeFiles/wam_common_matlab.dir/src/wam_common_Pose_service.cpp.o
+In file included from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/smart_ptr/shared_ptr.hpp:65,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/shared_ptr.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/time_clock.hpp:53,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time_types.hpp:46,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/time_formatters.hpp:52,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/posix_time/posix_time.hpp:60,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time/local_time/local_time.hpp:47,
+                 from /usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/date_time.hpp:51,
+                 from /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/wam_common/src/wam_common_Pose_service.cpp:3:
+/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/boost/include/boost/bind.hpp:72:1: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+   72 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[121/122] Linking CXX shared library /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/libwam_common_matlab.so
+[121/122] Install the project...
+-- Install configuration: "Release"
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/_setup_util.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/env.sh
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/setup.bash
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/local_setup.bash
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/setup.sh
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/local_setup.sh
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/setup.zsh
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/local_setup.zsh
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/.rosinstall
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTCartPos.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTCartVel.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTJointPos.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTJointTrq.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTJointVel.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTOrtnPos.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTOrtnVel.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/msg/RTPose.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandFingerPos.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandFingerVel.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandGraspPos.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandGraspVel.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandSpreadPos.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/BHandSpreadVel.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/CartPosMove.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/ChangeMinirobot.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/CouplingWam.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/DirMove.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/GravityComp.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/Hold.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/IdleWam.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/JointMove.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/Move.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/OrtnMove.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/Pose.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/PoseMove.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/Wrist.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/srv/WristRotate.srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/cmake/wam_common-msg-paths.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/JointMoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/WristRotate.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/ChangeMinirobotRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/PoseRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTJointVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTCartVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerPosRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspVelRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/WristResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/MoveRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/DirMove.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/GravityCompRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/IdleWamResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspVelResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/IdleWam.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/DirMoveRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/JointMoveRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspPosRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTPose.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerPosResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadVelResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/JointMove.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/MoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadPosRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspPosResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/Move.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTCartPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CouplingWam.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/OrtnMoveRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CartPosMoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/GravityCompResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/ChangeMinirobot.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTJointPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/Wrist.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CouplingWamResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/WristRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTOrtnPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTJointTrq.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/GravityComp.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/HoldResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CartPosMove.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/OrtnMoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/PoseMove.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CartPosMoveRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandGraspPos.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/DirMoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/OrtnMove.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/IdleWamRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadPosResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/WristRotateResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerVelResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/CouplingWamRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/RTOrtnVel.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/HoldRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandFingerVelRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/BHandSpreadVelRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/ChangeMinirobotResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/Hold.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/PoseMoveResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/Pose.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/PoseResponse.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/WristRotateRequest.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/PoseMoveRequest.h
+Listing '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/__init__.py'...
+Listing '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTCartPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTCartVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTJointPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTJointTrq.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTJointVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTOrtnPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTOrtnVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/_RTPose.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/msg/__init__.py'...
+Listing '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandFingerPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandFingerVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandGraspPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandGraspVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandSpreadPos.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_BHandSpreadVel.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_CartPosMove.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_ChangeMinirobot.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_CouplingWam.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_DirMove.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_GravityComp.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_Hold.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_IdleWam.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_JointMove.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_Move.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_OrtnMove.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_Pose.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_PoseMove.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_Wrist.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/_WristRotate.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_common/srv/__init__.py'...
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/__pycache__
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_JointMove.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandSpreadVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_Wrist.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandFingerPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_CartPosMove.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_DirMove.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandGraspVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_ChangeMinirobot.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_GravityComp.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_PoseMove.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandSpreadPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_IdleWam.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandFingerVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_CouplingWam.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_Pose.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_Move.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_WristRotate.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_Hold.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_OrtnMove.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__pycache__/_BHandGraspPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandGraspVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_Pose.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_PoseMove.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_ChangeMinirobot.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_DirMove.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandFingerPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_Move.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_Wrist.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_CartPosMove.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_OrtnMove.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_IdleWam.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandGraspPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_JointMove.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandFingerVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_GravityComp.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_Hold.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_CouplingWam.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_WristRotate.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/__init__.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandSpreadPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/srv/_BHandSpreadVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTCartPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTOrtnPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTOrtnVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTJointVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTPose.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTJointPos.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTJointTrq.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__pycache__/_RTCartVel.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTOrtnPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTPose.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTJointVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTJointTrq.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTOrtnVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTJointPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTCartPos.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/_RTCartVel.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/msg/__init__.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_common/__init__.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/pkgconfig/wam_common.pc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/cmake/wam_common-msg-extras.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/cmake/wam_commonConfig.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/cmake/wam_commonConfig-version.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_common/package.xml
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_common/visibility_control.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/libwam_common_matlab.so
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m/
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTOrtnPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/wristRotateResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTOrtnVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/gravityCompRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTJointTrq.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/couplingWamRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/moveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTJointVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/couplingWamResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/dirMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/dirMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/wristRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/poseMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/holdResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTCartVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/changeMinirobotResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandFingerVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTPose.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/ortnMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandSpreadPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandGraspVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandFingerPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/poseRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTJointPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandSpreadVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/gravityCompResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/rTCartPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/poseResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/jointMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/holdRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/wristRotateRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/wristResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/poseMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/jointMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/cartPosMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/ortnMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/moveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/changeMinirobotRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/idleWamResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandSpreadPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandSpreadVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandGraspPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/idleWamRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandFingerVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandGraspVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandGraspPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/bHandFingerPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_common/cartPosMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/PoseResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandFingerVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/OrtnMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/WristRotateResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/IdleWamResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/DirMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/WristRotateRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/JointMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandGraspVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/HoldResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTCartPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandSpreadVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTJointTrq.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTCartVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/JointMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/HoldRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/MoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/DirMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/ChangeMinirobotResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandGraspPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandGraspPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/PoseMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/ChangeMinirobotRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandSpreadPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandGraspVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandSpreadVelResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTPose.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/IdleWamRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/WristResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandSpreadPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandFingerPosResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTOrtnVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/CouplingWamResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/OrtnMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTOrtnPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/GravityCompRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/PoseRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/CartPosMoveResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTJointVel.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandFingerPosRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/MoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/CouplingWamRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/WristRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/BHandFingerVelRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/PoseMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/RTJointPos.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/GravityCompResponse.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_common/CartPosMoveRequest.m
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/msg/Location.msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/cmake/wam_msgs-msg-paths.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_msgs
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_msgs/Location.h
+Listing '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_msgs'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_msgs/__init__.py'...
+Listing '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_msgs/msg'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_msgs/msg/_Location.py'...
+Compiling '/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel/lib/python3/dist-packages/wam_msgs/msg/__init__.py'...
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/__pycache__
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg/__pycache__
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg/__pycache__/__init__.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg/__pycache__/_Location.cpython-39.pyc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg/__init__.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/msg/_Location.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/python3/dist-packages/wam_msgs/__init__.py
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/pkgconfig/wam_msgs.pc
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/cmake/wam_msgs-msg-extras.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/cmake/wam_msgsConfig.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/cmake/wam_msgsConfig-version.cmake
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/share/wam_msgs/package.xml
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_msgs
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/include/wam_msgs/visibility_control.h
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/lib/libwam_msgs_matlab.so
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m/
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_msgs
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+internal/+ros/+custommessages/+wam_msgs/location.m
+-- Up-to-date: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_msgs
+-- Installing: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install/m//+ros/+msggen/+wam_msgs/Location.m
+Base path: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64
+Source space: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src
+Build space: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build
+Devel space: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel
+Install space: /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install
+Creating symlink "/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src/CMakeLists.txt" pointing to "/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1/share/catkin/cmake/toplevel.cmake"
+####
+#### Running command: "cmake /home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/src -DALIAS_ROS1_CLASS_LOADER=1 -DBoost_NAMESPACE=mwboost -DCATKIN_ENABLE_TESTING=off -DCMAKE_PREFIX_PATH=/usr/local/MATLAB/R2022a/sys/ros1/glnxa64/ros1;/usr/local/MATLAB/R2022a/toolbox/ros/mlroscpp/custom_messages -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS_RELEASE=-O0 -DCATKIN_DEVEL_PREFIX=/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/devel -DCMAKE_INSTALL_PREFIX=/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/install -G Ninja" in "/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build"
+####
+####
+#### Running command: "ninja install install -j12 -l12" in "/home/wamremote/TFGjuanma/Code/Matlab/custom_ros_msgs/matlab_msg_gen_ros1/glnxa64/build"
+####

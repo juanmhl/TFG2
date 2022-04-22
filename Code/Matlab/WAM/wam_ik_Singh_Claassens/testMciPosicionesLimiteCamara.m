@@ -24,7 +24,7 @@ beta = [30 -30 30 -30 30 -30 30 -30];
 
 thDegSol = zeros([8,7]);
 
-wamTree = importrobot("C:\Users\juanm\Desktop\TFG\Code\Matlab\EstudioPosicionWAM\modelo_ik\barrett_model\robots\mirobot.urdf");
+wamTree = importrobot("mirobot.urdf");
 
 % figure;
 

@@ -20,7 +20,7 @@ function [th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolO
 %       - 3: falla restriccion th6
 %       - 4: falla restriccion alpha 2
 
-    addpath('C:\Users\juanm\Desktop\TFG\Code\Matlab\EstudioPosicionWAM\transformadas\');
+%     addpath('C:\Users\juanm\Desktop\TFG\Code\Matlab\EstudioPosicionWAM\transformadas\');
 
     %% Definición parámetros DH1 Barrett WAM
 
@@ -173,12 +173,12 @@ function [th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolO
         error = 3;
     end
 
-    % RESTRICCIÓN DE PHI PARA th6 :
-    syms phi
-    UJsim = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
-    UJVWP = (UJsim'-DWpos)/d5;
-    th2U = 2;
-    phiMin6 = real(solve(dot(UJVWP,TRz)==cos(th2U),phi,'ReturnConditions',true))
+%     % RESTRICCIÓN DE PHI PARA th6 :
+%     syms phi
+%     UJsim = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
+%     UJVWP = (UJsim'-DWpos)/d5;
+%     th2U = 2;
+%     phiMin6 = real(solve(dot(UJVWP,TRz)==cos(th2U),phi,'ReturnConditions',true))
 
     % Ploteo de círculos generadores en otra figura
     if plotGC

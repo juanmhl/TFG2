@@ -1,4 +1,4 @@
-wamTree = importrobot("barrett_model\robots\mirobot.urdf");
+wamTree = importrobot("mirobot.urdf");
 showdetails(wamTree);
 %%
 randConfig = wamTree.randomConfiguration;

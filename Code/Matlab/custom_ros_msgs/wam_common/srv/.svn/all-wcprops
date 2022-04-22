@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv
+END
+CartPosMove.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/CartPosMove.srv
+END
+GravityComp.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/GravityComp.srv
+END
+DirMove.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/DirMove.srv
+END
+Move.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/Move.srv
+END
+Pose.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/Pose.srv
+END
+ChangeMinirobot.srv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/ChangeMinirobot.srv
+END
+Wrist.srv
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/Wrist.srv
+END
+OrtnMove.srv
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/OrtnMove.srv
+END
+JointMove.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/JointMove.srv
+END
+BHandFingerVel.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandFingerVel.srv
+END
+BHandGraspVel.srv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandGraspVel.srv
+END
+IdleWam.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/IdleWam.srv
+END
+BHandSpreadVel.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandSpreadVel.srv
+END
+CouplingWam.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/CouplingWam.srv
+END
+Hold.srv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/Hold.srv
+END
+WristRotate.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/WristRotate.srv
+END
+BHandFingerPos.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandFingerPos.srv
+END
+BHandGraspPos.srv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandGraspPos.srv
+END
+BHandSpreadPos.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/BHandSpreadPos.srv
+END
+PoseMove.srv
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/SRCHALS/!svn/ver/47/wam/src/wam_common/srv/PoseMove.srv
+END
