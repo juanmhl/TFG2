@@ -1,4 +1,4 @@
-function [th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC)
+function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T, the parameter phi for
 %the generating circle, and the elbow configuration, 'O' or 'I' ('out' or 
@@ -244,7 +244,8 @@ function [th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolO
     
     th7 = 0;
     
-    thDeg = rad2deg(wrapToPi([th1 th2 th3 th4 th5 th6 th7]));
+    thRad = wrapToPi([th1 th2 th3 th4 th5 th6 th7]);
+    thDeg = rad2deg(thRad);
 
     %% Solución acondicionada al modelo 3D
     th(1).JointName = 'wam/base_yaw_joint';
