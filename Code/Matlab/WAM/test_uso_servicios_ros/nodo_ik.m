@@ -1,46 +1,109 @@
-% Apertura ROS Master
+%% Apertura ROS Master
+clear all
+% rosshutdown
 rosinit
+global wamTree;
+wamTree = importrobot("mirobot.urdf");
 
-% Creacion del nodo
-node = ros.Node('/WAMremote');
+%% Creacion del nodo
+% node = ros.Node('/WAMremote');
 
-% Creación de clientes de servicios
+%% Creación de clientes de servicios
 homeclient = rossvcclient("/wam/go_home");
-global jointclient = rossvcclient("/wam/joint_move");
+global jointclient;
+jointclient = rossvcclient("/wam/joint_move");
 
-% Creación de mensajes para los servicios
+%% Creación de mensajes para los servicios
 homemsg = rosmessage(homeclient);
-global jointmsg = rosmessage(jointclient);
+global jointmsg;
+jointmsg = rosmessage(jointclient);
 
-jointmsg.Joints = [-0.8 0.9 0 0.3 0 0.1 0];
+% jointmsg.Joints = [-0.8 0.9 0 0.3 0 0.1 0];
+jointmsg.Joints = [0 0 0 0 0 0 0];
 
-% LLamada a servicios
+%% LLamada a servicios
 call(homeclient,homemsg);
 call(jointclient,jointmsg);
 
+%% Prueba 1: en el eje z 
+
+jointmsg.Joints = [0 0 0 0 0 0 0];
+
 T = [1 0 0 0;
      0 1 0 0;
-     0 0 1 0.6;
+     0 0 1 0.7;
      0 0 0 1];
 
-phi = 0;
+phi = -pi;
 
-r = rosrate(200);
+%% 
+% 
+% r = rosrate(200);
+% 
+% reset(r);
+% 
+% while (r.TotalElapsedTime < 10)
+%     send_iksolution_to(T,phi);
+% end
 
-reset(r);
+send_iksolution_to(T,phi);
 
-while (r.TotalElapsedTime < 10)
-    send_iksolution_to(T,phi);
+%% Prueba 2: circunferencia alrededor del eje
+
+for phi = -0.75:-0.75:-6
+    send_iksolution_to(T,wrapToPi(phi));
+    pause(5);
 end
 
+%% Prueba 3: posiciones límite de la cámara
+
+camTtcp = [ -1 0  0 0;
+             0 1  0 0;
+             0 0 -1 0;
+             0 0  0 1
+          ];
+
+baseTpivot = [ -1  0 0  0.5;
+                0 -1 0  0;
+                0  0 1 -0.15;
+                0  0 0  1
+             ];
+
+alfa = [15 15 15 15 80 80 80 80];
+rho = [0.14 0.14 0.22 0.22 0.14 0.14 0.22 0.22];
+beta = [30 -30 30 -30 30 -30 30 -30];
+
+% thDegSol = zeros([8,7]);
+
+phi = -pi/2;
+
+%%
+for i = 1:8
+    T = baseTpivot*PoseCamaraSimulador(rho(i),beta(i),alfa(i))*camTtcp;
+%     [th, thDeg, A] = mci_wam(T,phi,'O',toolOffset,0,0);
+%     plot3(T(1,4),T(2,4),T(3,4),'*');
+%     hold on
+%     thDegSol(i,:) = thDeg;
+%     figure; show(wamTree,th);
+    send_iksolution_to(T,phi);
+    pause(5);
+end
+
+%% Cierre ROS
+
 rosshutdown;
+
+%% Funciones
 
 function send_iksolution_to(T,phi)
 
     global jointclient;
     global jointmsg;
+%     global wamTree;
 
-    thRad = mci_wam(T,phi,'O',0.15,0,0);
+    [thRad, th] = mci_wam(T,phi,'O',0,0,0)
+
+%     figure; show(wamTree,th);
 
     jointmsg.Joints = thRad;
 

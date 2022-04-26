@@ -190,7 +190,9 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
 
     
     th1 = atan2(yLJ,xLJ);
+%     th1 = atan2(yLJ,xLJ)+pi;
     th2 = acos(zLJ/d3);
+%     th2 = -acos(zLJ/d3);
     
     LJVA = -(LJ-A)/a3;
     
@@ -245,6 +247,12 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
     th7 = 0;
     
     thRad = wrapToPi([th1 th2 th3 th4 th5 th6 th7]);
+%     thRad = wrapTo2Pi([th1 th2 th3 th4 th5 th6 th7]);
+%     for i = 1:7
+%         if ( (thRad(i) < -3.1) || (thRad(i) > 2*3.1) )
+%             thRad(i) = 0;
+%         end
+%     end
     thDeg = rad2deg(thRad);
 
     %% Solución acondicionada al modelo 3D
