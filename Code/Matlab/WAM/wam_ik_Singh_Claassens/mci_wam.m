@@ -148,68 +148,104 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
     %% Obtención de valores límite de phi según restricciones de th2
     th2lim = 2;
     A = RcLJ * Rnorm(1,3);
-    B = RcLJ * Rnorm(2,3);
+    B = -(RcLJ * Rnorm(2,3));
     C = cos(th2lim)*d3 - dcLJ * Rnorm(3,3);
     ALPHA = atan(B/A);
 
     valetodo2 = -1;
 
+    % Simplemente me interesa phimax
+
     if ( norm(C/sqrt(A^2+B^2)) < 1 )
-        solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-        phimax2 = wrapToPi(solution);
-        phimin2 = wrapToPi(-solution);
+%         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
+        philim21 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
+        philim22 = wrapTo2Pi (acos( - C/sqrt(A^2+B^2)) + ALPHA );
+%         phimax2 = max([phimax21, phimax22]);
+        range2 = sort([philim21, philim22]);
+        phiprueba = mean(range2);
+        if ( A*cos(phiprueba)-B*sin(phiprueba) < C )
+            range2(1) = range2(2);
+            range2(2) = 3*pi/2;
+        end
     else
         valetodo2 = 1;
-        if ( A*cos(0)+B*sin(0) < cos(th2lim) )
+        range2 = [pi+pi/10, 3*pi/2];
+%         phimax2 = - pi/2;
+        if ( A*cos(0)-B*sin(0) < C )
             valetodo2 = 0;
         end
     end
 
     %% Obtención de valores límite de phi según restricciones de th6
-    th6lim = 1.6;
+    th6lim = 1.5;
     A = Rnorm(1,1)*TRz(1) + Rnorm(1,2)*TRz(2) + Rnorm(1,3)*TRz(3);
-    B = Rnorm(2,1)*TRz(1) + Rnorm(2,2)*TRz(2) + Rnorm(2,3)*TRz(3);
+    B = -(Rnorm(2,1)*TRz(1) + Rnorm(2,2)*TRz(2) + Rnorm(2,3)*TRz(3));
     C = d5*cos(th6lim)/RcUJ + DWpos(1)*TRz(1) + DWpos(2)*TRz(2) + DWpos(3)*TRz(3) - dcUJ*Rnorm(3,1)*TRz(1) - dcUJ*Rnorm(3,2)*TRz(2) - dcUJ*Rnorm(3,3)*TRz(3);
     ALPHA = atan(B/A);
 
     valetodo6 = -1;
 
     if ( norm(C/sqrt(A^2+B^2)) < 1 )
-        solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-        phimax6 = wrapToPi(solution);
-        phimin6 = wrapToPi(-solution);
+%         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
+        philim61 = wrapToPi(acos(   C/sqrt(A^2+B^2)) - ALPHA );
+        philim62 = wrapToPi(acos( - C/sqrt(A^2+B^2)) + ALPHA );
+%         phimax6 = max([phimax61, phimax62]);
+        range6 = sort([philim61, philim62]);
+        phiprueba = mean(range6);
+        if ( A*cos(phiprueba)-B*sin(phiprueba) > C )
+            range6(1) = range6(2);
+            range6(2) = 3*pi/2;
+        end
     else
         valetodo6 = 1;
-        if ( A*cos(0)+B*sin(0) < cos(th2lim) )
+        if ( A*cos(0)-B*sin(0) < C )
             valetodo6 = 0;
         end
     end
 
     %% Obtención de valores límites de phi generales
 
+%     if (valetodo6 == 0 || valetodo2 == 0)
+%         warning('no hay phi que cumpla restricciones de th2 o th6');
+%     else
+%         if (phimax6 > phimax2)
+%             phimax = phimax2;
+%         else
+%             phimax = phimax6;
+%         end
+% 
+%         if (phimin6 > phimin2)
+%             phimin = phimin6;
+%         else
+%             phimin = phimin2;
+%         end
+% 
+%         if (phimax > -pi/2)
+%             phimax = -pi/2;
+%         end
+% 
+%         if (phimin < -pi*9/10)
+%             phimin = -pi*9/10;
+%         end
+% 
+%     end
+
+%     if (valetodo6 == 0 || valetodo2 == 0)
+%         warning('no hay phi que cumpla restricciones de th2 o th6');
+%         phimax = -pi/2;
+%     elseif (valetodo2 == 1)
+%         phimax = phimax6;
+%     elseif (valetodo6 == 1)
+%         phimax = phimax2;
+%     elseif ( (valetodo2 == -1) && (valetodo6 == -1) )
+%         phimax = min([phimax2, phimax6]);
+%     end
+   
     if (valetodo6 == 0 || valetodo2 == 0)
         warning('no hay phi que cumpla restricciones de th2 o th6');
+        phimax = -pi/2;
     else
-        if (phimax6 > phimax2)
-            phimax = phimax2;
-        else
-            phimax = phimax6;
-        end
-
-        if (phimin6 > phimin2)
-            phimin = phimin6;
-        else
-            phimin = phimin2;
-        end
-
-        if (phimax > -pi/2)
-            phimax = -pi/2;
-        end
-
-        if (phimin < -pi*9/10)
-            phimin = -pi*9/10;
-        end
-
+        phimax = min([3*pi/2, range2(2), range6(2)]);
     end
 
     phi = phimax;
@@ -315,7 +351,8 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
     
     th7 = 0;
     
-    thRad = wrapToPi([th1 th2 th3 th4 th5 th6 th7]);
+%     thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
+    thRad = wrapToPi([th1 th2 th3 th4 th5 -th6 th7]);
 %     thRad = wrapTo2Pi([th1 th2 th3 th4 th5 th6 th7]);
 %     for i = 1:7
 %         if ( (thRad(i) < -3.1) || (thRad(i) > 2*3.1) )

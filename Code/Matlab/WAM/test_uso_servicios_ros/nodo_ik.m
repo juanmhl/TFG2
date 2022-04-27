@@ -86,7 +86,7 @@ for i = 1:8
 %     thDegSol(i,:) = thDeg;
 %     figure; show(wamTree,th);
     send_iksolution_to(T,phi);
-    pause(5);
+%     pause(5);
 end
 
 %% Cierre ROS
