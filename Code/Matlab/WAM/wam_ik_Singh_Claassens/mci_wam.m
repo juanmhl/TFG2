@@ -352,7 +352,7 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
     th7 = 0;
     
 %     thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
-    thRad = wrapToPi([th1 th2 th3 th4 th5 -th6 th7]);
+    thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
 %     thRad = wrapTo2Pi([th1 th2 th3 th4 th5 th6 th7]);
 %     for i = 1:7
 %         if ( (thRad(i) < -3.1) || (thRad(i) > 2*3.1) )
