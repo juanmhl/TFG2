@@ -1,4 +1,4 @@
-function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC)
+function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T, the parameter phi for
 %the generating circle, and the elbow configuration, 'O' or 'I' ('out' or 
@@ -245,7 +245,7 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
         warning('no hay phi que cumpla restricciones de th2 o th6');
         phimax = -pi/2;
     else
-        phimax = min([3*pi/2, range2(2), range6(2)]);
+        phimax = min([4.3, range2(2), range6(2)]);
     end
 
     phi = phimax;
@@ -273,10 +273,10 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
 
     UJVWP = (UJ'-DWpos)/d5;
     th2U = 2;
-    if ( dot(UJVWP,TRz) < cos(th2U) )
-        warning('No se cumple restricción para th6')
-        error = 3;
-    end
+%     if ( dot(UJVWP,TRz) < cos(th2U) )
+%         warning('No se cumple restricción para th6')
+%         error = 3;
+%     end
 
 %     % RESTRICCIÓN DE PHI PARA th6 :
 %     syms phi
@@ -348,11 +348,60 @@ function [thRad, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfi
         th5 = atan2(ytool,xtool);
         th6 = pi/2 - atan2(ztool,sqrt(xtool^2+ytool^2));
     end
-    
+
     th7 = 0;
+
+    H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
+              * transform(a7,alpha7,d7,th7);
+
+    origen = H07(1:3,1);
+    destino = T(1:3,1);
+
+    th7 = acos(dot(origen,destino));
+
+    H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
+              * transform(a7,alpha7,d7,th7);
+
+    if ( norm(H07(1,1)) ~= norm(T(1,1)) )
+        th7 = th7 + pi;
+    end
+
+%     th7 = 0;
     
 %     thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
-    thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
+    thRad = wrapToPi([th1 th2 th3 th4 th5 th6 th7]);
+
+    load("limitesArticulaciones.mat");
+
+    cambiarConfig = 0;
+
+    for i = 1:7
+        if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
+            cambiarConfig = 1;
+        end
+    end
+
+    if cambiarConfig
+%         thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
+        thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7]);
+        warning('cambiando a configuracion de angulos 2')
+    end
+
+    noCumple = 0;
+    for i = 1:7
+        if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
+            noCumple = 1;
+            sprintf('no cumple la articulacion %d',i)
+        end
+    end
+
+    if noCumple
+        display('NO SE CUMPLEN LAS RESTRICCIONES DE ANGULO')
+    else
+        display('SI SE CUMPLEN LAS RESTRICCIONES DE ANGULO')
+    end
+
+    phiOut = phi;
 %     thRad = wrapTo2Pi([th1 th2 th3 th4 th5 th6 th7]);
 %     for i = 1:7
 %         if ( (thRad(i) < -3.1) || (thRad(i) > 2*3.1) )

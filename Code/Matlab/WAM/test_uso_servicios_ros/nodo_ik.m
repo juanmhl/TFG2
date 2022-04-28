@@ -86,7 +86,7 @@ for i = 1:8
 %     thDegSol(i,:) = thDeg;
 %     figure; show(wamTree,th);
     send_iksolution_to(T,phi);
-%     pause(5);
+%     pause(7);
 end
 
 %% Cierre ROS
@@ -101,7 +101,7 @@ function send_iksolution_to(T,phi)
     global jointmsg;
 %     global wamTree;
 
-    [thRad, th] = mci_wam(T,phi,'O',0,0,0)
+    [thRad, phiOut] = mci_wam(T,phi,'O',0,0,0)
 
 %     figure; show(wamTree,th);
 
