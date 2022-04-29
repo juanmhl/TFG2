@@ -23,6 +23,7 @@ jointmsg.Joints = [0 0 0 0 0 0 0];
 
 %% LLamada a servicios
 call(homeclient,homemsg);
+jointmsg.Joints = [0 0 0 0 0 0 0];
 call(jointclient,jointmsg);
 
 %% Prueba 1: en el eje z 
@@ -63,9 +64,9 @@ camTtcp = [ -1 0  0 0;
              0 0  0 1
           ];
 
-baseTpivot = [ -1  0 0  0.5;
+baseTpivot = [ -1  0 0  0.55;
                 0 -1 0  0;
-                0  0 1 -0.15;
+                0  0 1 -0.1;
                 0  0 0  1
              ];
 
@@ -101,7 +102,7 @@ function send_iksolution_to(T,phi)
     global jointmsg;
 %     global wamTree;
 
-    [thRad, phiOut] = mci_wam(T,phi,'O',0,0,0)
+    [thRad, phiOut] = mci_wam(T,phi,'O',0,0,0,0)
 
 %     figure; show(wamTree,th);
 

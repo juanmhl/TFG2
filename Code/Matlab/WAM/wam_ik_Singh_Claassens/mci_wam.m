@@ -1,4 +1,4 @@
-function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC)
+function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T, the parameter phi for
 %the generating circle, and the elbow configuration, 'O' or 'I' ('out' or 
@@ -353,19 +353,31 @@ function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,el
 
     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
               * transform(a7,alpha7,d7,th7);
-
+    if plotTransforms
+        figure;
+        createFRAME(T,'b','DT');
+        createFRAME(H07,'r','H07');
+        title('rotacion original')
+    end
     origen = H07(1:3,1);
     destino = T(1:3,1);
 
-    th7 = acos(dot(origen,destino));
+    th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi;
 
+%     th7 = acos(dot(origen,destino));
+% 
+%     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
+%               * transform(a7,alpha7,d7,th7);
+% 
+%     if ( norm(H07(1,1)) ~= norm(T(1,1)) )
+%         th7 = th7 + pi;
+%     end
     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
               * transform(a7,alpha7,d7,th7);
-
-    if ( norm(H07(1,1)) ~= norm(T(1,1)) )
-        th7 = th7 + pi;
-    end
-
+%     figure;
+%     createFRAME(T,'b','DT');
+%     createFRAME(H07,'r','H07');
+%     title('rotacion propuesta')
 %     th7 = 0;
     
 %     thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
@@ -375,17 +387,44 @@ function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,el
 
     cambiarConfig = 0;
 
-    for i = 1:7
-        if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
-            cambiarConfig = 1;
-        end
+%     for i = 1:7
+%         if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
+%             cambiarConfig = 1;
+%         end
+%     end
+
+    if ( (thRad(5)<limitesRAD(5,1)) || (thRad(5)>limitesRAD(5,2)) )
+        display('5 no cumple, cambiando a configuracion 2')
+        cambiarConfig = 1;
     end
 
     if cambiarConfig
-%         thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
-        thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7]);
+        thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
+%         thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7]);
         warning('cambiando a configuracion de angulos 2')
     end
+
+    th7 = 0;
+
+    H07 = H04 * transform(a5,alpha5,d5,thRad(5)) * transform(a6,alpha6,d6,thRad(6)) ...
+              * transform(a7,alpha7,d7,0);
+
+    origen = H07(1:3,1);
+    destino = T(1:3,1);
+
+    th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi/2;
+    
+    if plotTransforms
+        H07 = H04 * transform(a5,alpha5,d5,thRad(5)) * transform(a6,alpha6,d6,thRad(6)) ...
+                  * transform(a7,alpha7,d7,th7);
+    
+        figure;
+        createFRAME(T,'b','DT');
+        createFRAME(H07,'r','H07');
+        title('rotacion propuesta')
+    end
+    
+    thRad(7) = th7;
 
     noCumple = 0;
     for i = 1:7
