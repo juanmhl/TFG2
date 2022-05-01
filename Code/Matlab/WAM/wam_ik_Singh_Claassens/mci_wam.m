@@ -103,7 +103,7 @@ function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,el
     % proyecciones del eje z móvil sobre los ejes fijos. El resto del ejes
     % no se especifican y no nos importan de momento.
     
-    %% Calcs for definig circles UJC, GC, LJC
+    %% Calcs for definig circles UJC, GC, LJC parameters
     
     L1 = norm([d3 a3]);
     L2 = norm([d5 a4]);
