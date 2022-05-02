@@ -1,4 +1,4 @@
-function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,phiIn,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T, the parameter phi for
 %the generating circle, and the elbow configuration, 'O' or 'I' ('out' or 
@@ -150,58 +150,72 @@ function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,el
     A = RcLJ * Rnorm(1,3);
     B = -(RcLJ * Rnorm(2,3));
     C = cos(th2lim)*d3 - dcLJ * Rnorm(3,3);
-    ALPHA = atan(B/A);
 
-    valetodo2 = -1;
-
-    % Simplemente me interesa phimax
-
-    if ( norm(C/sqrt(A^2+B^2)) < 1 )
-%         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-        philim21 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
-        philim22 = wrapTo2Pi (acos( - C/sqrt(A^2+B^2)) + ALPHA );
-%         phimax2 = max([phimax21, phimax22]);
-        range2 = sort([philim21, philim22]);
-        phiprueba = mean(range2);
-        if ( A*cos(phiprueba)-B*sin(phiprueba) < C )
-            range2(1) = range2(2);
-            range2(2) = 3*pi/2;
-        end
-    else
-        valetodo2 = 1;
-        range2 = [pi+pi/10, 3*pi/2];
-%         phimax2 = - pi/2;
-        if ( A*cos(0)-B*sin(0) < C )
-            valetodo2 = 0;
-        end
-    end
+    [rth2, errorth2] = resolver_inecuacion(A,B,C,0);
+    
+%     ALPHA = atan(B/A);
+%     valetodo2 = -1;
+% 
+%     % Simplemente me interesa phimax
+% 
+%     if ( norm(C/sqrt(A^2+B^2)) < 1 )
+% %         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
+%         philim21 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
+%         philim22 = wrapTo2Pi (acos( - C/sqrt(A^2+B^2)) + ALPHA );
+% %         phimax2 = max([phimax21, phimax22]);
+%         range2 = sort([philim21, philim22]);
+%         phiprueba = mean(range2);
+%         if ( A*cos(phiprueba)-B*sin(phiprueba) < C )
+%             range2(1) = range2(2);
+%             range2(2) = 3*pi/2;
+%         end
+%     else
+%         valetodo2 = 1;
+%         range2 = [pi+pi/10, 3*pi/2];
+% %         phimax2 = - pi/2;
+%         if ( A*cos(0)-B*sin(0) < C )
+%             valetodo2 = 0;
+%         end
+%     end
 
     %% Obtención de valores límite de phi según restricciones de th6
-    th6lim = 1.5;
-    A = Rnorm(1,1)*TRz(1) + Rnorm(1,2)*TRz(2) + Rnorm(1,3)*TRz(3);
-    B = -(Rnorm(2,1)*TRz(1) + Rnorm(2,2)*TRz(2) + Rnorm(2,3)*TRz(3));
-    C = d5*cos(th6lim)/RcUJ + DWpos(1)*TRz(1) + DWpos(2)*TRz(2) + DWpos(3)*TRz(3) - dcUJ*Rnorm(3,1)*TRz(1) - dcUJ*Rnorm(3,2)*TRz(2) - dcUJ*Rnorm(3,3)*TRz(3);
-    ALPHA = atan(B/A);
+    th6lim = pi/2;
+%     A = Rnorm(1,1)*TRz(1) + Rnorm(1,2)*TRz(2) + Rnorm(1,3)*TRz(3);
+%     B = -(Rnorm(2,1)*TRz(1) + Rnorm(2,2)*TRz(2) + Rnorm(2,3)*TRz(3));
+%     C = d5*cos(th6lim)/RcUJ + DWpos(1)*TRz(1) + DWpos(2)*TRz(2) + DWpos(3)*TRz(3) - dcUJ*Rnorm(3,1)*TRz(1) - dcUJ*Rnorm(3,2)*TRz(2) - dcUJ*Rnorm(3,3)*TRz(3);
+    
+    A = RcUJ * (TRz(1)*Rnorm(1,1) + TRz(2)*Rnorm(1,2) + TRz(3)*Rnorm(1,3));
+    B = - ( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) );
+    C = -TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3));
 
-    valetodo6 = -1;
-
-    if ( norm(C/sqrt(A^2+B^2)) < 1 )
-%         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-        philim61 = wrapToPi(acos(   C/sqrt(A^2+B^2)) - ALPHA );
-        philim62 = wrapToPi(acos( - C/sqrt(A^2+B^2)) + ALPHA );
-%         phimax6 = max([phimax61, phimax62]);
-        range6 = sort([philim61, philim62]);
-        phiprueba = mean(range6);
-        if ( A*cos(phiprueba)-B*sin(phiprueba) > C )
-            range6(1) = range6(2);
-            range6(2) = 3*pi/2;
-        end
-    else
-        valetodo6 = 1;
-        if ( A*cos(0)-B*sin(0) < C )
-            valetodo6 = 0;
-        end
+    soluciones = [];
+    for phiprueba = 0:0.05:6.2
+        solucion = A*cos(phiprueba)-B*sin(phiprueba) > C;
+        soluciones = [soluciones, solucion];
     end
+
+    [rth6, errorth6] = resolver_inecuacion(A,B,C,1);
+
+%     ALPHA = atan(B/A);
+%     valetodo6 = -1;
+% 
+%     if ( norm(C/sqrt(A^2+B^2)) < 1 )
+% %         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
+%         philim61 = wrapToPi(acos(   C/sqrt(A^2+B^2)) - ALPHA );
+%         philim62 = wrapToPi(acos( - C/sqrt(A^2+B^2)) + ALPHA );
+% %         phimax6 = max([phimax61, phimax62]);
+%         range6 = sort([philim61, philim62]);
+%         phiprueba = mean(range6);
+%         if ( A*cos(phiprueba)-B*sin(phiprueba) > C )
+%             range6(1) = range6(2);
+%             range6(2) = 3*pi/2;
+%         end
+%     else
+%         valetodo6 = 1;
+%         if ( A*cos(0)-B*sin(0) < C )
+%             valetodo6 = 0;
+%         end
+%     end
 
     %% Obtención de valores límites de phi generales
 
@@ -241,14 +255,30 @@ function [thRad, phiOut, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,el
 %         phimax = min([phimax2, phimax6]);
 %     end
    
-    if (valetodo6 == 0 || valetodo2 == 0)
-        warning('no hay phi que cumpla restricciones de th2 o th6');
-        phimax = -pi/2;
-    else
-        phimax = min([4.3, range2(2), range6(2)]);
-    end
+%     if (valetodo6 == 0 || valetodo2 == 0)
+%         warning('no hay phi que cumpla restricciones de th2 o th6');
+%         phimax = -pi/2;
+%     else
+%         phimax = min([4.3, range2(2), range6(2)]);
+%     end
+% 
+%     phi = phimax;
 
-    phi = phimax;
+    r = [11*pi/10, 3*pi/2];
+
+    [r, hayInterseccionth2] = calc_interseccion(r, rth2);
+    [r, hayInterseccionth6] = calc_interseccion(r, rth6);
+
+    hayInterseccion = hayInterseccionth6 && hayInterseccionth2;
+
+    if hayInterseccion
+        phi = wrapToPi(max(r));
+    else
+        phi = 0.3212;
+        warning('No hay interseccion entre los rangos de las restricciones')
+    end
+    
+%     phi = wrapToPi(phiIn);
     
     %% Obtención de posición del codo sea fijo phi
     

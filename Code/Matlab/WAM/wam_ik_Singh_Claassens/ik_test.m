@@ -44,13 +44,19 @@ beta = [30 -30 30 -30 30 -30 30 -30];
 
 phi = -pi/2;
 
+phiIn = 9;
 %%
-for i = 1:8
+for i = 7:8
     % Pose objetivo:
     T = baseTpivot*PoseCamaraSimulador(rho(i),beta(i),alfa(i))*camTtcp;
     % Solucion MCI
-    [thRad, phiOut] = mci_wam(T,phi,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
-    figure; show(wamTree,th);
+    soluciones = [0 0 0 0 0 0 0];
+    for phiIn = 0.05: 0.05: 6.2
+        [thRad, phiOut, rth6] = mci_wam(T,phi,phiIn,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+        soluciones = [soluciones; thRad];
+    end
+%     [thRad, phiOut, rth6] = mci_wam(T,phi,phiIn,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+%     figure; show(wamTree,th);
 end
 
 

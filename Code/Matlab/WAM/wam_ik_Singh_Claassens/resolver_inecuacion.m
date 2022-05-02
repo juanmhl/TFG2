@@ -1,6 +1,6 @@
-function [r, error] = resolver_inecuacion(A,B,C)
+function [r, error] = resolver_inecuacion(A,B,C,invertir)
 
-    ALPHA = atan(B/A);
+    ALPHA = atan2(B,A);
     error = 0;
     
     % No hay solucion a la inecuacion si:
@@ -17,16 +17,24 @@ function [r, error] = resolver_inecuacion(A,B,C)
     else 
         % En caso de haber solucion se encuentran 2
         s1 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
-        s2 = wrapTo2Pi (acos( - C/sqrt(A^2+B^2)) + ALPHA );
+        s2 = wrapTo2Pi (-acos(C/sqrt(A^2+B^2)) - ALPHA );
         sols = sort([s1, s2]);
     
         % Probamos con el valor del medio a ver si cumple
         phi = mean(sols);
         
-        if ( A*cos(phi)-B*sin(phi) > C )    % Si cumple para ese angulo
-            r = [sols(1), sols(2)];
-        else                                % No cumple para ese angulo
-            r = [sols(2), sols(1)+2*pi];
+        if ~invertir
+            if ( (A*cos(phi)-B*sin(phi) > C) )    % Si cumple para ese angulo
+                r = [sols(1), sols(2)];
+            else                                % No cumple para ese angulo
+                r = [sols(2), sols(1)+2*pi];
+            end
+        elseif invertir
+            if ( (A*cos(phi)-B*sin(phi) < C) )    % Si cumple para ese angulo
+                r = [sols(1), sols(2)];
+            else                                % No cumple para ese angulo
+                r = [sols(2), sols(1)+2*pi];
+            end
         end
     
     end
