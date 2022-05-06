@@ -37,6 +37,8 @@ T = [1 0 0 0;
 
 phi = -pi;
 
+send_iksolution_to(T,phi);
+
 %% 
 % 
 % r = rosrate(200);
@@ -50,10 +52,13 @@ phi = -pi;
 send_iksolution_to(T,phi);
 
 %% Prueba 2: circunferencia alrededor del eje
-
+T = [1 0 0 0;
+     0 1 0 0;
+     0 0 1 0.7;
+     0 0 0 1];
 for phi = -0.75:-0.75:-6
     send_iksolution_to(T,wrapToPi(phi));
-    pause(5);
+%     pause(5);
 end
 
 %% Prueba 3: posiciones límite de la cámara
@@ -87,8 +92,19 @@ for i = 1:8
 %     thDegSol(i,:) = thDeg;
 %     figure; show(wamTree,th);
     send_iksolution_to(T,phi);
-%     pause(7);
+    pause(6);
 end
+
+%% Prueba 4: Punto que limite phi
+
+T = [-1 0 0 0.6;
+     0 1 0 -0.3;
+     0 0 -1 -0.2;
+     0 0 0 1];
+
+phi = 0;
+
+send_iksolution_to(T,phi);
 
 %% Cierre ROS
 
@@ -102,7 +118,7 @@ function send_iksolution_to(T,phi)
     global jointmsg;
 %     global wamTree;
 
-    [thRad, phiOut] = mci_wam(T,phi,'O',0,0,0,0)
+    [thRad, phiOut] = mci_wam(T,phi,0,'O',0,0,0,0)
 
 %     figure; show(wamTree,th);
 
