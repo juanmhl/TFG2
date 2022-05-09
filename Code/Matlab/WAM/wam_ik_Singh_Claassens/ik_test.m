@@ -14,7 +14,7 @@ phi = 0;
 elbowConfig = 'O';
 
 toolOffset = 0.15;
-plotGC = 0;
+plotGC = 1;
 plotElbowGC = 0;
 plotTransforms = 0;
 

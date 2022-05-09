@@ -546,9 +546,26 @@ function plotGeneratingCircles(DTpos,DWpos,Rc,dc,RcUJ,dcUJ,RcLJ,dcLJ,Rnorm)
         yLJ = LJ(2);
         zLJ = LJ(3);
         plot3(xLJ,yLJ,zLJ,'.b')
+        if phi==-1.6
+            A = Cnorm(Rc,dc,phi)'*Rnorm;
+            xA = A(1);
+            yA = A(2);
+            zA = A(3);
+            plot3(xA,yA,zA,'*r')
+            UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
+            xUJ = UJ(1);
+            yUJ = UJ(2);
+            zUJ = UJ(3);
+            plot3(xUJ,yUJ,zUJ,'*r')
+            LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
+            xLJ = LJ(1);
+            yLJ = LJ(2);
+            zLJ = LJ(3);
+            plot3(xLJ,yLJ,zLJ,'*r')
+        end
     end
     plot3(DTpos(1),DTpos(2),DTpos(3),'*b');
-    plot3(DWpos(1),DWpos(2),DWpos(3),'*r');
+    plot3(DWpos(1),DWpos(2),DWpos(3),'*g');
     xlabel('X');
     ylabel('Y');
     zlabel('Z');
