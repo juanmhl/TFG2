@@ -362,6 +362,66 @@ function T =  transform(a,alpha,d,th)
 
 end
 
+function [r, error] = resolver_inecuacion(A,B,C,invertir)
+
+    ALPHA = atan2(B,A);
+    error = 0;
+    
+    % No hay solucion a la inecuacion si:
+    if ( norm(C/sqrt(A^2+B^2)) > 1 )
+        % Probamos si se cumple la inecuacion para un punto cualquiera
+        phi = -pi/2;
+        if ( A*cos(phi)-B*sin(phi) > C )    % Si cumple para todo angulo
+            r = [0, 2*pi];
+        else                                % No cumple para ningun angulo
+            r = [0, 0];
+            error = -1;     % Flag que señaliza que no hay solucion posible
+        end
+    
+    else 
+        % En caso de haber solucion se encuentran 2
+        s1 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
+        s2 = wrapTo2Pi (-acos(C/sqrt(A^2+B^2)) - ALPHA );
+        sols = sort([s1, s2]);
+    
+        % Probamos con el valor del medio a ver si cumple
+        phi = mean(sols);
+        
+        if ~invertir
+            if ( (A*cos(phi)-B*sin(phi) > C) )    % Si cumple para ese angulo
+                r = [sols(1), sols(2)];
+            else                                % No cumple para ese angulo
+                r = [sols(2), sols(1)+2*pi];
+            end
+        elseif invertir
+            if ( (A*cos(phi)-B*sin(phi) < C) )    % Si cumple para ese angulo
+                r = [sols(1), sols(2)];
+            else                                % No cumple para ese angulo
+                r = [sols(2), sols(1)+2*pi];
+            end
+        end
+    
+    end
+
+end
+
+function [rout, hayInterseccion] = calc_interseccion(r1, r2)
+
+min1enr2 = (r1(1) > r2(1)) && (r1(1) < r2(2));
+max1enr2 = (r1(2) > r2(1)) && (r1(2) < r2(2));
+min2enr1 = (r2(1) > r1(1)) && (r2(1) < r1(2));
+max2enr1 = (r2(2) > r1(1)) && (r2(2) < r1(2));
+
+hayInterseccion =  (min1enr2 || min2enr1 || max1enr2 || max2enr1);
+
+if ~hayInterseccion
+    rout = [0, 0];
+elseif hayInterseccion
+    rout = [max([r1(1),r2(1)]), min([r1(2),r2(2)])];
+end
+
+end
+
 function plotGeneratingCircles(DTpos,DWpos,Rc,dc,RcUJ,dcUJ,RcLJ,dcLJ,Rnorm)
     figure;
     plot3(0,0,0,'*k');

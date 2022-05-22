@@ -39,6 +39,5 @@ function [r, error] = resolver_inecuacion(A,B,C,invertir)
     
     end
 
-
 end
 
