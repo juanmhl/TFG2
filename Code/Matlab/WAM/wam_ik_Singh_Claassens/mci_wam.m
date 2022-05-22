@@ -1,37 +1,36 @@
-function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,phi,phiIn,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
-%inverse kinematics problem given the target pose T, the parameter phi for
-%the generating circle, and the elbow configuration, 'O' or 'I' ('out' or 
-%'in') and 
+%inverse kinematics problem given the target pose T and: 
 %   INPUTS:
 %   - T:    target pose, 4x4 hom trasf matrix
-%   - phi:  generating circle angle parameter
 %   - elbowConfiguration: 'out' / 'in'
-%   - toolOffset: eso
+%   - toolOffset: length of tool offset in meters
+%   - plotGC: true if you want to plot generating circles for pose T
+%   - plotGC: true if you want to plot elbow position for pose T
+%   - plotGC: true if you want to plot transforms for pose T
 %   OUTPUT:
+%   - thRad: vector with the solution for the ik problem for each
+%     articulation in rads, between -pi and pi
+%   - phiOut: elbow angle in GC chosen by the function
+%   - th: solution formatted for 3D visualization with urdf model
 %   - thDeg: vector with the solution for the ik problem for each
 %     articulation in degrees, between -180º and 180
-%   - th: solution formatted for 3D visualization with urdf model
 %   - A: position of the elbow with relative to the base
 %   - error:
-%       - 0: todo bien
-%       - 1: falla restriccion th2
-%       - 2: falla restriccion th4
-%       - 3: falla restriccion th6
-%       - 4: falla restriccion alpha 2
-
-%     addpath('C:\Users\juanm\Desktop\TFG\Code\Matlab\EstudioPosicionWAM\transformadas\');
-
-    %% Definición parámetros DH1 Barrett WAM
+%       - 0: ok
+%       - 1: th2 restriction fails
+%       - 2: th4 restriction fails
+%       - 3: th6 restriction fails
+%       - 4: alpha2 restriction fails
 
     error = 0;
-    phiMin = 0;
-    phiMax = 0;
-    
-    a1 = 0;
-    a2 = 0;
-    a3 = 0.045;
-    a4 = -0.045;
+
+    %% DH1 parameters Barrett WAM
+
+    a1 = 0;         
+    a2 = 0;         
+    a3 = 0.045;     
+    a4 = -0.045;    
     a5 = 0;
     a6 = 0;
     a7 = 0;
@@ -56,7 +55,6 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     
     
     %% Desired Tool and Wrist Position
-
     DTpos = T(1:3,4);
     TRz = T(1:3,3);
     
@@ -68,14 +66,6 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
         warning('No se cumple la restricción de th4, d fuera de rango');
         error = 1;
     end
-    
-    % Ploteo base, posición de la herramienta, y posición de la muñeca
-%     figure;
-%     plot3(0,0,0,'*k');
-%     grid on
-%     hold on
-%     plot3(DTpos(1),DTpos(2),DTpos(3),'*b')
-%     plot3(DWpos(1),DWpos(2),DWpos(3),'*r')
     
     %% For rotational norm matrix:
     % Rnorm -> matrix which places the desired wrist location to an eqvlnt
@@ -99,17 +89,10 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     Tnorm = rotX(alphaNorm)*rotZ(betaNorm);
     Rnorm = Tnorm(1:3,1:3);
     
-    % Solo coincide la última fila, que es la que coincide con las
-    % proyecciones del eje z móvil sobre los ejes fijos. El resto del ejes
-    % no se especifican y no nos importan de momento.
-    
     %% Calcs for definig circles UJC, GC, LJC parameters
     
     L1 = norm([d3 a3]);
     L2 = norm([d5 a4]);
-    
-    %       METER COMPROBACIÓN DE QQUE LO DE DENTRO DEL SENO ES MENOR QUE 1 EN
-    %       LA FUNCIÓN !!!!!!!!!!!!!
     
     if ( (d^2+L2^2-L1^2)/(2*d*L2) > 1 )
         warning('No hay solución para alfa 2');
@@ -123,7 +106,6 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
 %     dc = d - L2*cos(alph2);
     Rc = L1*sin(alph1);
 %     Rc = L2*sin(alph2);
-    % Debe salir lo mismo con ambos (y sale)
     
     LBAUj = pi/2 - atan(a3/d3);
     LOALj = pi/2 - atan(norm(a4)/d5);
@@ -145,125 +127,23 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
         RcLJ = Rc - cos(thL)*norm(a3);
     end
 
-    %% Obtención de valores límite de phi según restricciones de th2
+    %% Obtencion de valores limite de phi segun restricciones de th2
     th2lim = 2;
     A = RcLJ * Rnorm(1,3);
     B = -(RcLJ * Rnorm(2,3));
     C = cos(th2lim)*d3 - dcLJ * Rnorm(3,3);
 
     [rth2, errorth2] = resolver_inecuacion(A,B,C,0);
-    
-%     ALPHA = atan(B/A);
-%     valetodo2 = -1;
-% 
-%     % Simplemente me interesa phimax
-% 
-%     if ( norm(C/sqrt(A^2+B^2)) < 1 )
-% %         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-%         philim21 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
-%         philim22 = wrapTo2Pi (acos( - C/sqrt(A^2+B^2)) + ALPHA );
-% %         phimax2 = max([phimax21, phimax22]);
-%         range2 = sort([philim21, philim22]);
-%         phiprueba = mean(range2);
-%         if ( A*cos(phiprueba)-B*sin(phiprueba) < C )
-%             range2(1) = range2(2);
-%             range2(2) = 3*pi/2;
-%         end
-%     else
-%         valetodo2 = 1;
-%         range2 = [pi+pi/10, 3*pi/2];
-% %         phimax2 = - pi/2;
-%         if ( A*cos(0)-B*sin(0) < C )
-%             valetodo2 = 0;
-%         end
-%     end
 
-    %% Obtención de valores límite de phi según restricciones de th6
-    th6lim = pi/2;
-%     A = Rnorm(1,1)*TRz(1) + Rnorm(1,2)*TRz(2) + Rnorm(1,3)*TRz(3);
-%     B = -(Rnorm(2,1)*TRz(1) + Rnorm(2,2)*TRz(2) + Rnorm(2,3)*TRz(3));
-%     C = d5*cos(th6lim)/RcUJ + DWpos(1)*TRz(1) + DWpos(2)*TRz(2) + DWpos(3)*TRz(3) - dcUJ*Rnorm(3,1)*TRz(1) - dcUJ*Rnorm(3,2)*TRz(2) - dcUJ*Rnorm(3,3)*TRz(3);
-    
+    %% Obtencion de valores limite de phi segun restricciones de th6
+    th6lim = pi/2;    
     A = RcUJ * (TRz(1)*Rnorm(1,1) + TRz(2)*Rnorm(1,2) + TRz(3)*Rnorm(1,3));
     B = - ( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) );
     C = -TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3));
 
-    soluciones = [];
-    for phiprueba = 0:0.05:6.2
-        solucion = A*cos(phiprueba)-B*sin(phiprueba) > C;
-        soluciones = [soluciones, solucion];
-    end
-
     [rth6, errorth6] = resolver_inecuacion(A,B,C,1);
 
-%     ALPHA = atan(B/A);
-%     valetodo6 = -1;
-% 
-%     if ( norm(C/sqrt(A^2+B^2)) < 1 )
-% %         solution = acos(C/sqrt(A^2+B^2)) + ALPHA;
-%         philim61 = wrapToPi(acos(   C/sqrt(A^2+B^2)) - ALPHA );
-%         philim62 = wrapToPi(acos( - C/sqrt(A^2+B^2)) + ALPHA );
-% %         phimax6 = max([phimax61, phimax62]);
-%         range6 = sort([philim61, philim62]);
-%         phiprueba = mean(range6);
-%         if ( A*cos(phiprueba)-B*sin(phiprueba) > C )
-%             range6(1) = range6(2);
-%             range6(2) = 3*pi/2;
-%         end
-%     else
-%         valetodo6 = 1;
-%         if ( A*cos(0)-B*sin(0) < C )
-%             valetodo6 = 0;
-%         end
-%     end
-
-    %% Obtención de valores límites de phi generales
-
-%     if (valetodo6 == 0 || valetodo2 == 0)
-%         warning('no hay phi que cumpla restricciones de th2 o th6');
-%     else
-%         if (phimax6 > phimax2)
-%             phimax = phimax2;
-%         else
-%             phimax = phimax6;
-%         end
-% 
-%         if (phimin6 > phimin2)
-%             phimin = phimin6;
-%         else
-%             phimin = phimin2;
-%         end
-% 
-%         if (phimax > -pi/2)
-%             phimax = -pi/2;
-%         end
-% 
-%         if (phimin < -pi*9/10)
-%             phimin = -pi*9/10;
-%         end
-% 
-%     end
-
-%     if (valetodo6 == 0 || valetodo2 == 0)
-%         warning('no hay phi que cumpla restricciones de th2 o th6');
-%         phimax = -pi/2;
-%     elseif (valetodo2 == 1)
-%         phimax = phimax6;
-%     elseif (valetodo6 == 1)
-%         phimax = phimax2;
-%     elseif ( (valetodo2 == -1) && (valetodo6 == -1) )
-%         phimax = min([phimax2, phimax6]);
-%     end
-   
-%     if (valetodo6 == 0 || valetodo2 == 0)
-%         warning('no hay phi que cumpla restricciones de th2 o th6');
-%         phimax = -pi/2;
-%     else
-%         phimax = min([4.3, range2(2), range6(2)]);
-%     end
-% 
-%     phi = phimax;
-
+    %% Obtencion de valores limites de phi generales
     r = [11*pi/10, 3*pi/2];
 
     [r, hayInterseccionth2] = calc_interseccion(r, rth2);
@@ -278,9 +158,7 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
         warning('No hay interseccion entre los rangos de las restricciones')
     end
     
-%     phi = wrapToPi(phiIn);
-    
-    %% Obtención de posición del codo sea fijo phi
+    %% Obtencion de posicion del codo sea fijo phi
     
     xW = DWpos(1);
     yW = DWpos(2);
@@ -303,27 +181,18 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
 
     UJVWP = (UJ'-DWpos)/d5;
     th2U = 2;
-%     if ( dot(UJVWP,TRz) < cos(th2U) )
-%         warning('No se cumple restricción para th6')
-%         error = 3;
-%     end
-
-%     % RESTRICCIÓN DE PHI PARA th6 :
-%     syms phi
-%     UJsim = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
-%     UJVWP = (UJsim'-DWpos)/d5;
-%     th2U = 2;
-%     phiMin6 = real(solve(dot(UJVWP,TRz)==cos(th2U),phi,'ReturnConditions',true))
 
     % Ploteo de círculos generadores en otra figura
     if plotGC
         plotGeneratingCircles(DTpos,DWpos,Rc,dc,RcUJ,dcUJ,RcLJ,dcLJ,Rnorm);
     end
+    % Ploteo de posicion del codo en otra figura
     if plotElbowGC
         plotElbow(DTpos,DWpos,xA,yA,zA,xUJ,yUJ,zUJ,xLJ,yLJ,zLJ,dc,Tnorm,alphaNorm,betaNorm);
     end
 
-    
+    %% Calculo de soluciones
+
     th1 = atan2(yLJ,xLJ);
 %     th1 = atan2(yLJ,xLJ)+pi;
     th2 = acos(zLJ/d3);
@@ -383,6 +252,7 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
 
     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
               * transform(a7,alpha7,d7,th7);
+    % Ploteo de transformadas antes de la rotacion final
     if plotTransforms
         figure;
         createFRAME(T,'b','DT');
@@ -394,35 +264,17 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
 
     th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi;
 
-%     th7 = acos(dot(origen,destino));
-% 
-%     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
-%               * transform(a7,alpha7,d7,th7);
-% 
-%     if ( norm(H07(1,1)) ~= norm(T(1,1)) )
-%         th7 = th7 + pi;
-%     end
     H07 = H04 * transform(a5,alpha5,d5,th5) * transform(a6,alpha6,d6,th6) ...
               * transform(a7,alpha7,d7,th7);
-%     figure;
-%     createFRAME(T,'b','DT');
-%     createFRAME(H07,'r','H07');
-%     title('rotacion propuesta')
-%     th7 = 0;
-    
-%     thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
+
+    %% Obtencion de solucion final
     thRad = wrapToPi([th1 th2 th3 th4 th5 th6 th7]);
 
     load("limitesArticulaciones.mat");
 
     cambiarConfig = 0;
 
-%     for i = 1:7
-%         if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
-%             cambiarConfig = 1;
-%         end
-%     end
-
+    % Comprueba si th5 cumple con los limites
     if ( (thRad(5)<limitesRAD(5,1)) || (thRad(5)>limitesRAD(5,2)) )
         display('5 no cumple, cambiando a configuracion 2')
         cambiarConfig = 1;
@@ -430,7 +282,6 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
 
     if cambiarConfig
         thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7+pi]);
-%         thRad = wrapToPi([th1 th2 th3 th4 th5+pi -th6 th7]);
         warning('cambiando a configuracion de angulos 2')
     end
 
@@ -442,12 +293,13 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     origen = H07(1:3,1);
     destino = T(1:3,1);
 
+    % Habria que volver a calcular th7
     th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi/2;
     
+    % Ploteo de transfromadas en su posicion final
     if plotTransforms
         H07 = H04 * transform(a5,alpha5,d5,thRad(5)) * transform(a6,alpha6,d6,thRad(6)) ...
                   * transform(a7,alpha7,d7,th7);
-    
         figure;
         createFRAME(T,'b','DT');
         createFRAME(H07,'r','H07');
@@ -456,6 +308,7 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     
     thRad(7) = th7;
 
+    % Comprobacion de limites para cada articulacion
     noCumple = 0;
     for i = 1:7
         if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
@@ -471,15 +324,9 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     end
 
     phiOut = phi;
-%     thRad = wrapTo2Pi([th1 th2 th3 th4 th5 th6 th7]);
-%     for i = 1:7
-%         if ( (thRad(i) < -3.1) || (thRad(i) > 2*3.1) )
-%             thRad(i) = 0;
-%         end
-%     end
     thDeg = rad2deg(thRad);
 
-    %% Solución acondicionada al modelo 3D
+    %% Solucion formateada al modelo 3D
     th(1).JointName = 'wam/base_yaw_joint';
     th(2).JointName = 'wam/shoulder_pitch_joint';
     th(3).JointName = 'wam/shoulder_yaw_joint';
@@ -488,36 +335,26 @@ function [thRad, phiOut, rth6, th, thDeg, A, phiMin, phiMax, error] = mci_wam(T,
     th(6).JointName = 'wam/wrist_pitch_joint';
     th(7).JointName = 'wam/palm_yaw_joint';
     
-    th(1).JointPosition = wrapToPi(th1);
-    th(2).JointPosition = wrapToPi(th2);
-    th(3).JointPosition = wrapToPi(th3);
-    th(4).JointPosition = wrapToPi(th4);
-    th(5).JointPosition = wrapToPi(th5);
-    th(6).JointPosition = wrapToPi(th6);
-    th(7).JointPosition = wrapToPi(th7);
+    th(1).JointPosition = wrapToPi(thDeg(1));
+    th(2).JointPosition = wrapToPi(thDeg(1));
+    th(3).JointPosition = wrapToPi(thDeg(1));
+    th(4).JointPosition = wrapToPi(thDeg(1));
+    th(5).JointPosition = wrapToPi(thDeg(1));
+    th(6).JointPosition = wrapToPi(thDeg(1));
+    th(7).JointPosition = wrapToPi(thDeg(1));
 
 end
-
-
-
-% %% Para sacar la posicion del codo busco la posicion del sistema 3
-% disp("Matriz T03 con cinemática directa")
-% T01 = transform(a1,alpha1,d1,th1);
-% T12 = transform(a2,alpha2,d2,th2);
-% T23 = transform(a3,alpha3,d3,th3);
-% T03 = T01*T12*T23;
 
 
 %% Funciones
 
 function p = Cnorm(R,D,phi)
-
+    % Posiciones dentro de circulos generadores
     p = [R*cos(phi) R*sin(phi) D]';
-
 end
 
 function T =  transform(a,alpha,d,th)
-
+    % Transformada con parametros DH1
     T = [cos(th) -sin(th)*cos(alpha) sin(th)*sin(alpha) a*cos(th);
          sin(th) cos(th)*cos(alpha) -cos(th)*sin(alpha) a*sin(th);
          0 sin(alpha) cos(alpha) d;
