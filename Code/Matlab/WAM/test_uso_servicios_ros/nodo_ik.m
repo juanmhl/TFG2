@@ -1,24 +1,24 @@
-%% Apertura ROS Master
+%% Inicializacion
 clear all
-% rosshutdown
+
+% Creacion del ROS Master
 rosinit
+
+% Modelo urdf del robot WAM (visualizacion)
 global wamTree;
 wamTree = importrobot("mirobot.urdf");
 
-%% Creacion del nodo
-% node = ros.Node('/WAMremote');
 
-%% Creación de clientes de servicios
+%% Creacion de clientes de servicios
 homeclient = rossvcclient("/wam/go_home");
 global jointclient;
 jointclient = rossvcclient("/wam/joint_move");
 
-%% Creación de mensajes para los servicios
+%% Creacion de mensajes para los servicios
 homemsg = rosmessage(homeclient);
 global jointmsg;
 jointmsg = rosmessage(jointclient);
 
-% jointmsg.Joints = [-0.8 0.9 0 0.3 0 0.1 0];
 jointmsg.Joints = [0 0 0 0 0 0 0];
 
 %% LLamada a servicios
