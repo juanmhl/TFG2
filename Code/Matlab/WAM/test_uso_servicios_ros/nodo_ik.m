@@ -114,13 +114,13 @@ rosshutdown;
 
 %% Funciones
 
-function send_iksolution_to(T,phi)
+function send_iksolution_to(T)
 
     global jointclient;
     global jointmsg;
 %     global wamTree;
 
-    [thRad, phiOut] = mci_wam(T,phi,0,'O',0,0,0,0)
+    [thRad] = mci_wam(T,'O',0.11,0,0,0);
 
 %     figure; show(wamTree,th);
 
