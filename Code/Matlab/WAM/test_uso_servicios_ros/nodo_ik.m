@@ -9,10 +9,12 @@ global wamTree;
 wamTree = importrobot("mirobot.urdf");
 
 
-%% Creacion de clientes de servicios
+%% Creacion de clientes de servicios y suscriptores de topics
 homeclient = rossvcclient("/wam/go_home");
 global jointclient;
 jointclient = rossvcclient("/wam/joint_move");
+global posesub;
+posesub = rossubscriber("/wam/pose");
 
 %% Creacion de mensajes para los servicios
 homemsg = rosmessage(homeclient);
@@ -23,8 +25,8 @@ jointmsg.Joints = [0 0 0 0 0 0 0];
 
 %% LLamada a servicios
 call(homeclient,homemsg);
-jointmsg.Joints = [0 0 0 0 0 0 0];
-call(jointclient,jointmsg);
+% jointmsg.Joints = [0 0 0 0 0 0 0];
+% call(jointclient,jointmsg);
 
 %% Prueba 1: en el eje z 
 
@@ -126,4 +128,22 @@ function send_iksolution_to(T,phi)
 
     call(jointclient,jointmsg);
 
+end
+
+function [T,pos,quaternion] = pose_wam
+    global posesub;
+    posemsg = receive(posesub);
+
+    pos = [posemsg.Pose.Position.X;
+           posemsg.Pose.Position.Y;
+           posemsg.Pose.Position.Z];
+    
+    quaternion = [posemsg.Pose.Orientation.W;
+                  posemsg.Pose.Orientation.X;
+                  posemsg.Pose.Orientation.Y;
+                  posemsg.Pose.Orientation.Z]';
+    
+    R = quat2rotm(quaternion);
+    
+    T = [R pos; 0 0 0 1];
 end
