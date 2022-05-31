@@ -71,7 +71,7 @@ camTtcp = [ -1 0  0 0;
              0 0  0 1
           ];
 
-baseTpivot = [ -1  0 0  0.55;
+baseTpivot = [ -1  0 0  0.56;
                 0 -1 0  0;
                 0  0 1 -0.1;
                 0  0 0  1
@@ -93,9 +93,21 @@ for i = 1:8
 %     hold on
 %     thDegSol(i,:) = thDeg;
 %     figure; show(wamTree,th);
-    send_iksolution_to(T,phi);
+    send_iksolution_to(T);
     pause(6);
 end
+
+%%
+baseTpivot = [ -1  0 0  0.583;
+                0 -1 0  0;
+                0  0 1 -0.118;
+                0  0 0  1
+             ];
+
+T = baseTpivot*PoseCamaraSimulador(0.19,10,25)*camTtcp;
+% T = baseTpivot*PoseCamaraSimulador(0.22,0,50)*camTtcp;
+send_iksolution_to(T);
+
 
 %% Prueba 4: Punto que limite phi
 

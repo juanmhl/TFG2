@@ -144,7 +144,7 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     [rth6, errorth6] = resolver_inecuacion(A,B,C,1);
 
     %% Obtencion de valores limites de phi generales
-    r = [11*pi/10, 3*pi/2];
+    r = [11*pi/10, 3*pi/2-0.3];
 
     [r, hayInterseccionth2] = calc_interseccion(r, rth2);
     [r, hayInterseccionth6] = calc_interseccion(r, rth6);
