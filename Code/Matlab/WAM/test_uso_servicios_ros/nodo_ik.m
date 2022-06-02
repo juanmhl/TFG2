@@ -71,9 +71,9 @@ camTtcp = [ -1 0  0 0;
              0 0  0 1
           ];
 
-baseTpivot = [ -1  0 0  0.56;
+baseTpivot = [ -1  0 0  0.583;
                 0 -1 0  0;
-                0  0 1 -0.1;
+                0  0 1 -0.118;
                 0  0 0  1
              ];
 
@@ -97,7 +97,7 @@ for i = 1:8
     pause(6);
 end
 
-%%
+%% Prueba 4: posicion especifica
 baseTpivot = [ -1  0 0  0.583;
                 0 -1 0  0;
                 0  0 1 -0.118;
@@ -108,11 +108,9 @@ T = baseTpivot*PoseCamaraSimulador(0.22,0,20)*camTtcp;
 % T = baseTpivot*PoseCamaraSimulador(0.22,0,50)*camTtcp;
 % T=baseTpivot*desp([0 0 -0.03])*camTtcp;
 send_iksolution_to(T);
-%%
-createFRAME(PoseCamaraSimulador(0.19,35,25),'r','a la derecha',1);
 
 
-%% Prueba 4: Punto que limite phi
+%% Prueba 5: Punto que limite phi
 
 T = [-1 0 0 0.6;
      0 1 0 -0.3;
