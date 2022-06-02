@@ -104,7 +104,7 @@ baseTpivot = [ -1  0 0  0.583;
                 0  0 0  1
              ];
 
-T = baseTpivot*PoseCamaraSimulador(0.18,0,5)*camTtcp;
+T = baseTpivot*PoseCamaraSimulador(0.22,0,20)*camTtcp;
 % T = baseTpivot*PoseCamaraSimulador(0.22,0,50)*camTtcp;
 % T=baseTpivot*desp([0 0 -0.03])*camTtcp;
 send_iksolution_to(T);
