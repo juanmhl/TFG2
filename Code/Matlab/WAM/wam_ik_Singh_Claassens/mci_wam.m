@@ -294,7 +294,15 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     destino = T(1:3,1);
 
     % Habria que volver a calcular th7
-    th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi/2;
+    th7 = -atan2(norm(cross(destino,origen)),-dot(destino,origen)) + pi/2;
+
+    destinoX = T(1:3,1);
+    destinoY = T(1:3,2);
+    origen = H07(1:3,2);
+    sq7 = dot(destinoX, origen); % Vector orientación n: T(1:3,1)
+    cq7 = dot(destinoY, origen); % Vector orientación s: T(1:3,2)
+    q7 = atan2(sq7, cq7);
+    th7 = q7+pi/2;
     
     % Ploteo de transfromadas en su posicion final
     if plotTransforms
@@ -306,7 +314,7 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
         title('rotacion propuesta')
     end
     
-    thRad(7) = th7;
+    thRad(7) = wrapToPi(th7);
 
     % Comprobacion de limites para cada articulacion
     noCumple = 0;
