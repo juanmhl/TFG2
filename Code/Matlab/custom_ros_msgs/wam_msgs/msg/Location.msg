@@ -1,0 +1,6 @@
+std_msgs/Header header
+
+geometry_msgs/Point columna1_orientation
+geometry_msgs/Point columna2_orientation
+geometry_msgs/Point columna3_orientation
+geometry_msgs/Point columna4_position
