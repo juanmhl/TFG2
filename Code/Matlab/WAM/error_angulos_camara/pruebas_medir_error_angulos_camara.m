@@ -78,14 +78,14 @@ rho_real = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 )
 
 %% Bateria de tests:
 
-tests = [];
-k = 1;
+% tests = [];
+k = 216;
 
-robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.14,-30,15)*camTtcp;
+robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.14,-30,30)*camTtcp;
 send_iksolution_to(robotTobjetivo);
 pause(30)
 
-for alpha = 15:5:80
+for alpha = 30:5:80
     for beta = -30:5:30
         for rho = 0.14:0.02:0.22
             robotTobjetivo = robotTfulcro*PoseCamaraSimulador(rho,beta,alpha)*camTtcp;
@@ -124,7 +124,7 @@ for alpha = 15:5:80
 
 end
 
-save("tests_precision.mat","tests")
+% save("tests_precision.mat","tests")
 
 
 
