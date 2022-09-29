@@ -59,14 +59,14 @@ beta = [30 -30 30 -30 30 -30 30 -30];
 phi = -pi/2;
 
 %%
-robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.15, ...  % rho, metros, cuanto sale
+robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.22, ...  % rho, metros, cuanto sale
                                                     0, ...  % beta, horizontal, grados
                                                     20 ...  % alpha, vertical, grados
                                                  )*camTtcp;
 
 thRad = send_iksolution_to(robotTobjetivo);
 robotTobjetivo_tras_mci = MCD_WAM(thRad);
-pause(4)
+pause(5)
 robotTobjetivo_real = pose_wam();
 
 T = inv(robotTfulcro)*robotTobjetivo_real*inv(camTtcp)*rotZ(pi/2);
@@ -75,6 +75,7 @@ alpha_real = rad2deg(atan2(-T(2,3),T(3,3)))
 beta_real = rad2deg(atan2(-T(1,2),T(1,1)))
 % rho = T(1,4)/T(1,2)
 rho_real = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 )
+rho_real_2 = sqrt( T(1,4)^2 + T(2,4)^2 + T(3,4)^2 )
 
 %% Bateria de tests:
 
@@ -126,7 +127,58 @@ end
 
 % save("tests_precision.mat","tests")
 
+%% Correccion del calculo de rho real mediante el uso de distancia cartesiana
 
+for i = 1:length(tests)
+    tests(i).rho_real_cart = sqrt( tests(i).T_real(1,4)^2 + tests(i).T_real(2,4)^2 + tests(i).T_real(3,4)^2 );
+end
+
+%% Extraccion de datos
+
+alpha = [];
+beta = [];
+rho = [];
+alpha_real = [];
+beta_real = [];
+rho_real = [];
+rho_real_cart = [];
+% T_deseada = [];
+% T_tras_mci = [];
+% T_real = [];
+
+
+for i = 1:930
+    alpha = [alpha, tests(i).alpha];
+    alpha_real = [alpha_real, tests(i).alpha_real];
+    beta = [beta, tests(i).beta];
+    beta_real = [beta_real, tests(i).beta_real];
+    rho = [rho, tests(i).rho];
+    rho_real = [rho_real, tests(i).rho_real];
+    rho_real_cart = [rho_real_cart, tests(i).rho_real_cart];
+end
+
+
+
+%%
+e_alpha = alpha - alpha_real;
+e_beta = beta - beta_real;
+% e_rho = rho - rho_real;
+e_rho = rho - rho_real_cart;
+
+
+%%
+
+e_alpha(66)=0;
+e_beta(66)=0;
+
+figure; plot(e_alpha); ylabel('error en alpha (grados)'); grid on; xlabel('muestras')
+figure; plot(e_beta); ylabel('error en beta (grados)'); grid on; xlabel('muestras')
+figure; plot(e_rho); ylabel('error en rho (metros)'); grid on; xlabel('muestras')
+
+e_alpha_mean = mean(e_alpha)
+e_beta_mean = mean(e_beta)
+e_alpha_stdv = std(e_alpha)
+e_beta_stdv = std(e_beta)
 
 
 %% Cierre ROS
