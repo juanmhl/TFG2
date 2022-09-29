@@ -168,8 +168,8 @@ e_rho = rho - rho_real_cart;
 
 %%
 
-e_alpha(66)=0;
-e_beta(66)=0;
+% e_alpha(66)=0;
+% e_beta(66)=0;
 
 figure; plot(e_alpha); ylabel('error en alpha (grados)'); grid on; xlabel('muestras')
 figure; plot(e_beta); ylabel('error en beta (grados)'); grid on; xlabel('muestras')
@@ -177,8 +177,10 @@ figure; plot(e_rho); ylabel('error en rho (metros)'); grid on; xlabel('muestras'
 
 e_alpha_mean = mean(e_alpha)
 e_beta_mean = mean(e_beta)
+e_rho_mean = mean(e_rho)
 e_alpha_stdv = std(e_alpha)
 e_beta_stdv = std(e_beta)
+e_rho_stdv = std(e_rho)
 
 
 %% Cierre ROS
