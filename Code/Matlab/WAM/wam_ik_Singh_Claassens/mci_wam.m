@@ -128,18 +128,21 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
         RcLJ = Rc - cos(thL)*norm(a3);
     end
 
+    %% Imposicion de trabajar en el tercer cuadrante
+    r = [11*pi/10, 3*pi/2];
+
     %% Obtencion de valores limite de phi segun restricciones de th2
     th2lim = 2;
     A = RcLJ * Rnorm(1,3);
     B = -(RcLJ * Rnorm(2,3));
     C = cos(th2lim)*d3 - dcLJ * Rnorm(3,3);
 
-    [rth2, errorth2] = resolver_inecuacion(A,B,C,0,1);
+    [rth2, errorth2] = resolver_inecuacion(A,B,C,0,1,r);
 
     %% Obtencion de valores limite de phi segun restricciones de altura del codo LJ
     C = H - dcLJ*Rnorm(3,3);
 
-    [rH, errorH] = resolver_inecuacion(A,B,C,0,0);
+    [rH, errorH] = resolver_inecuacion(A,B,C,0,0,r);
 
     %% Obtencion de valores limite de phi segun restricciones de th6
     th6lim = pi/2;    
@@ -147,11 +150,11 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     B = - ( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) );
     C = -TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3));
 
-    [rth6, errorth6] = resolver_inecuacion(A,B,C,1,1);
+    [rth6, errorth6] = resolver_inecuacion(A,B,C,1,1,r);
 
     %% Obtencion de valores limites de phi generales
 %     r = [11*pi/10, 3*pi/2-0.3];
-    r = [11*pi/10, 3*pi/2];
+%     r = [11*pi/10, 3*pi/2];
 
     [r, hayInterseccionth2] = calc_interseccion(r, rth2);
     [r, hayInterseccionth6] = calc_interseccion(r, rth6);
@@ -378,48 +381,48 @@ function T =  transform(a,alpha,d,th)
 
 end
 
-function [r, error] = resolver_inecuacion(A,B,C,invertir)
-
-    ALPHA = atan2(B,A);
-    error = 0;
-    
-    % No hay solucion a la inecuacion si:
-    if ( norm(C/sqrt(A^2+B^2)) > 1 )
-        % Probamos si se cumple la inecuacion para un punto cualquiera
-        phi = -pi/2;
-        if ( A*cos(phi)-B*sin(phi) > C )    % Si cumple para todo angulo
-            r = [0, 2*pi];
-        else                                % No cumple para ningun angulo
-            r = [0, 0];
-            error = -1;     % Flag que señaliza que no hay solucion posible
-        end
-    
-    else 
-        % En caso de haber solucion se encuentran 2
-        s1 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
-        s2 = wrapTo2Pi (-acos(C/sqrt(A^2+B^2)) - ALPHA );
-        sols = sort([s1, s2]);
-    
-        % Probamos con el valor del medio a ver si cumple
-        phi = mean(sols);
-        
-        if ~invertir
-            if ( (A*cos(phi)-B*sin(phi) > C) )    % Si cumple para ese angulo
-                r = [sols(1), sols(2)];
-            else                                % No cumple para ese angulo
-                r = [sols(2), sols(1)+2*pi];
-            end
-        elseif invertir
-            if ( (A*cos(phi)-B*sin(phi) < C) )    % Si cumple para ese angulo
-                r = [sols(1), sols(2)];
-            else                                % No cumple para ese angulo
-                r = [sols(2), sols(1)+2*pi];
-            end
-        end
-    
-    end
-
-end
+% function [r, error] = resolver_inecuacion(A,B,C,invertir)
+% 
+%     ALPHA = atan2(B,A);
+%     error = 0;
+%     
+%     % No hay solucion a la inecuacion si:
+%     if ( norm(C/sqrt(A^2+B^2)) > 1 )
+%         % Probamos si se cumple la inecuacion para un punto cualquiera
+%         phi = -pi/2;
+%         if ( A*cos(phi)-B*sin(phi) > C )    % Si cumple para todo angulo
+%             r = [0, 2*pi];
+%         else                                % No cumple para ningun angulo
+%             r = [0, 0];
+%             error = -1;     % Flag que señaliza que no hay solucion posible
+%         end
+%     
+%     else 
+%         % En caso de haber solucion se encuentran 2
+%         s1 = wrapTo2Pi (acos(   C/sqrt(A^2+B^2)) - ALPHA );
+%         s2 = wrapTo2Pi (-acos(C/sqrt(A^2+B^2)) - ALPHA );
+%         sols = sort([s1, s2]);
+%     
+%         % Probamos con el valor del medio a ver si cumple
+%         phi = mean(sols);
+%         
+%         if ~invertir
+%             if ( (A*cos(phi)-B*sin(phi) > C) )    % Si cumple para ese angulo
+%                 r = [sols(1), sols(2)];
+%             else                                % No cumple para ese angulo
+%                 r = [sols(2), sols(1)+2*pi];
+%             end
+%         elseif invertir
+%             if ( (A*cos(phi)-B*sin(phi) < C) )    % Si cumple para ese angulo
+%                 r = [sols(1), sols(2)];
+%             else                                % No cumple para ese angulo
+%                 r = [sols(2), sols(1)+2*pi];
+%             end
+%         end
+%     
+%     end
+% 
+% end
 
 function [rout, hayInterseccion] = calc_interseccion(r1, r2)
 

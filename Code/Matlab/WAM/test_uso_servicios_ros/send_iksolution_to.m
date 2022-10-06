@@ -4,7 +4,7 @@ function thRad = send_iksolution_to(T)
     global jointmsg;
 %     global wamTree;
 
-    [thRad] = mci_wam(T,'O',0.11,0,0,0);
+    [thRad] = mci_wam(T,'O',0.11,0,0,0,0.32);
 
 %     figure; show(wamTree,th);
 

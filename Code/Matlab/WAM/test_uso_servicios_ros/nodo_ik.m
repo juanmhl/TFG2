@@ -8,14 +8,14 @@ rosinit
 global wamTree;
 wamTree = importrobot("mirobot.urdf");
 
-
 %% Creacion de clientes de servicios y suscriptores de topics
 homeclient = rossvcclient("/wam/go_home");
 global jointclient;
 jointclient = rossvcclient("/wam/joint_move");
 global posesub;
 posesub = rossubscriber("/wam/pose");
-
+global jointsub;
+jointsub = rossubscriber("/wam/joint_states");
 %% Creacion de mensajes para los servicios
 homemsg = rosmessage(homeclient);
 global jointmsg;
@@ -104,9 +104,9 @@ baseTpivot = [ -1  0 0  0.587;
                 0  0 0  1
              ];
 
-% T = baseTpivot*PoseCamaraSimulador(0.22,0,20)*camTtcp;
+T = baseTpivot*PoseCamaraSimulador(0.2,-20,35)*camTtcp;
 % T = baseTpivot*PoseCamaraSimulador(0.22,0,50)*camTtcp;
-T=baseTpivot*desp([0 0 -0.025])*camTtcp;
+% T=baseTpivot*desp([0 0 -0.025])*camTtcp;
 send_iksolution_to(T);
 
 
