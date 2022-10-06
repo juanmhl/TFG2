@@ -1,4 +1,4 @@
-function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,H)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -8,6 +8,7 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
 %   - plotGC: true if you want to plot generating circles for pose T
 %   - plotGC: true if you want to plot elbow position for pose T
 %   - plotGC: true if you want to plot transforms for pose T
+%   - H: max hight from the robot base for the elbow point LJ in meters
 %   OUTPUT:
 %   - thRad: vector with the solution for the ik problem for each
 %     articulation in rads, between -pi and pi
@@ -133,7 +134,12 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     B = -(RcLJ * Rnorm(2,3));
     C = cos(th2lim)*d3 - dcLJ * Rnorm(3,3);
 
-    [rth2, errorth2] = resolver_inecuacion(A,B,C,0);
+    [rth2, errorth2] = resolver_inecuacion(A,B,C,0,1);
+
+    %% Obtencion de valores limite de phi segun restricciones de altura del codo LJ
+    C = H - dcLJ*Rnorm(3,3);
+
+    [rH, errorH] = resolver_inecuacion(A,B,C,0,0);
 
     %% Obtencion de valores limite de phi segun restricciones de th6
     th6lim = pi/2;    
@@ -141,15 +147,17 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     B = - ( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) );
     C = -TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3));
 
-    [rth6, errorth6] = resolver_inecuacion(A,B,C,1);
+    [rth6, errorth6] = resolver_inecuacion(A,B,C,1,1);
 
     %% Obtencion de valores limites de phi generales
-    r = [11*pi/10, 3*pi/2-0.3];
+%     r = [11*pi/10, 3*pi/2-0.3];
+    r = [11*pi/10, 3*pi/2];
 
     [r, hayInterseccionth2] = calc_interseccion(r, rth2);
     [r, hayInterseccionth6] = calc_interseccion(r, rth6);
+    [r, hayInterseccionH] = calc_interseccion(r,rH);
 
-    hayInterseccion = hayInterseccionth6 && hayInterseccionth2;
+    hayInterseccion = hayInterseccionth6 && hayInterseccionth2 && hayInterseccionH;
 
     if hayInterseccion
         phi = wrapToPi(max(r));
