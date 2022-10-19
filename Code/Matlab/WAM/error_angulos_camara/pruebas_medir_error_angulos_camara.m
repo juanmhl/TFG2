@@ -168,12 +168,13 @@ e_rho = rho - rho_real_cart;
 
 %%
 
-% e_alpha(66)=0;
-% e_beta(66)=0;
+e_alpha(66)=0;
+e_beta(66)=0;
 
-figure; plot(e_alpha); ylabel('error en alpha (grados)'); grid on; xlabel('muestras')
-figure; plot(e_beta); ylabel('error en beta (grados)'); grid on; xlabel('muestras')
-figure; plot(e_rho); ylabel('error en rho (metros)'); grid on; xlabel('muestras')
+figure; plot(e_alpha); ylabel('Error en alpha (grados)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara alpha');
+figure; plot(e_beta); ylabel('Error en beta (grados)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara beta');
+figure; plot(e_rho); ylabel('Error en rho (metros)'); grid on; xlabel('Muestras'); title('Análisis de error de distancia de cámara rho');
+
 
 e_alpha_mean = mean(e_alpha)
 e_beta_mean = mean(e_beta)
@@ -212,21 +213,21 @@ for i = 1:length(tests)
 
 end
 
-figure; xlabel('Valor de beta'); ylabel('Error medio de alpha (grados)');
+figure; xlabel('Consigna de beta (grados)'); ylabel('Error medio de alpha (grados)');title('Análisis de error de ángulo de cámara alpha');
 hold on; grid on;
 for key = keys(dict_alpha_e)'
     dict_alpha_e(key) = dict_alpha_e(key) / dict_alpha_n(key);
     plot(key,dict_alpha_e(key),'*b',LineStyle='-')
 end
 
-figure; xlabel('Valor de beta'); ylabel('Error medio de beta (grados)');
+figure; xlabel('Consigna de beta (grados)'); ylabel('Error medio de beta (grados)');title('Análisis de error de ángulo de cámara beta');
 hold on; grid on;
 for key = keys(dict_beta_e)'
     dict_beta_e(key) = dict_beta_e(key) / dict_beta_n(key);
     plot(key,dict_beta_e(key),'*b',LineStyle='-')
 end
 
-figure; xlabel('Valor de beta'); ylabel('Error medio de rho (grados)');
+figure; xlabel('Consigna de beta (grados)'); ylabel('Error medio de rho (metros)'); title('Análisis de error de distancia de cámara rho');
 hold on; grid on;
 for key = keys(dict_rho_e)'
     dict_rho_e(key) = dict_rho_e(key) / dict_rho_n(key);
@@ -235,5 +236,5 @@ end
 
 %% Cierre ROS
 
-rosshutdown;
+% rosshutdown;
 
