@@ -182,6 +182,56 @@ e_alpha_stdv = std(e_alpha)
 e_beta_stdv = std(e_beta)
 e_rho_stdv = std(e_rho)
 
+%% e_alpha y e_beta parecen tener correlacion con el valor de beta, se grafica
+
+dict_alpha_e = dictionary([],[]);
+dict_alpha_n = dictionary([],[]);
+dict_beta_e = dictionary([],[]);
+dict_beta_n = dictionary([],[]);
+dict_rho_e = dictionary([],[]);
+dict_rho_n = dictionary([],[]);
+
+for i = 1:length(tests)
+    beta_dict_ind = tests(i).beta;
+
+    if isKey(dict_alpha_e,beta_dict_ind)
+        dict_alpha_e(beta_dict_ind) = dict_alpha_e(beta_dict_ind) + tests(i).alpha - tests(i).alpha_real;
+        dict_beta_e(beta_dict_ind) = dict_beta_e(beta_dict_ind) + tests(i).beta - tests(i).beta_real;
+        dict_rho_e(beta_dict_ind) = dict_rho_e(beta_dict_ind) + tests(i).rho - tests(i).rho_real;
+        dict_alpha_n(beta_dict_ind) = dict_alpha_n(beta_dict_ind) + 1;
+        dict_beta_n(beta_dict_ind) = dict_beta_n(beta_dict_ind) + 1;
+        dict_rho_n(beta_dict_ind) = dict_rho_n(beta_dict_ind) + 1;
+    else
+        dict_alpha_e(beta_dict_ind) = tests(i).alpha - tests(i).alpha_real;
+        dict_beta_e(beta_dict_ind) = tests(i).beta - tests(i).beta_real;
+        dict_rho_e(beta_dict_ind) = tests(i).rho - tests(i).rho_real;
+        dict_alpha_n(beta_dict_ind) = 1;
+        dict_beta_n(beta_dict_ind) = 1;
+        dict_rho_n(beta_dict_ind) = 1;
+    end
+
+end
+
+figure; xlabel('Valor de beta'); ylabel('Error medio de alpha (grados)');
+hold on; grid on;
+for key = keys(dict_alpha_e)'
+    dict_alpha_e(key) = dict_alpha_e(key) / dict_alpha_n(key);
+    plot(key,dict_alpha_e(key),'*b',LineStyle='-')
+end
+
+figure; xlabel('Valor de beta'); ylabel('Error medio de beta (grados)');
+hold on; grid on;
+for key = keys(dict_beta_e)'
+    dict_beta_e(key) = dict_beta_e(key) / dict_beta_n(key);
+    plot(key,dict_beta_e(key),'*b',LineStyle='-')
+end
+
+figure; xlabel('Valor de beta'); ylabel('Error medio de rho (grados)');
+hold on; grid on;
+for key = keys(dict_rho_e)'
+    dict_rho_e(key) = dict_rho_e(key) / dict_rho_n(key);
+    plot(key,dict_rho_e(key),'*b',LineStyle='-')
+end
 
 %% Cierre ROS
 
