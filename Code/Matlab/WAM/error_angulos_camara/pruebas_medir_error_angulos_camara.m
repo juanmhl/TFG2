@@ -234,6 +234,57 @@ for key = keys(dict_rho_e)'
     plot(key,dict_rho_e(key),'*b',LineStyle='-')
 end
 
+%% Estudiamos también la correlación con alpha
+
+dict_alpha_e = dictionary([],[]);
+dict_alpha_n = dictionary([],[]);
+dict_beta_e = dictionary([],[]);
+dict_beta_n = dictionary([],[]);
+dict_rho_e = dictionary([],[]);
+dict_rho_n = dictionary([],[]);
+
+for i = 1:length(tests)
+    alpha_dict_ind = tests(i).alpha;
+
+    if isKey(dict_alpha_e,alpha_dict_ind)
+        dict_alpha_e(alpha_dict_ind) = dict_alpha_e(alpha_dict_ind) + tests(i).alpha - tests(i).alpha_real;
+        dict_beta_e (alpha_dict_ind) = dict_beta_e (alpha_dict_ind) + tests(i).beta - tests(i).beta_real;
+        dict_rho_e  (alpha_dict_ind) = dict_rho_e  (alpha_dict_ind) + tests(i).rho - tests(i).rho_real;
+        dict_alpha_n(alpha_dict_ind) = dict_alpha_n(alpha_dict_ind) + 1;
+        dict_beta_n (alpha_dict_ind) = dict_beta_n (alpha_dict_ind) + 1;
+        dict_rho_n  (alpha_dict_ind) = dict_rho_n  (alpha_dict_ind) + 1;
+    else
+        dict_alpha_e(alpha_dict_ind) = tests(i).alpha - tests(i).alpha_real;
+        dict_beta_e (alpha_dict_ind) = tests(i).beta - tests(i).beta_real;
+        dict_rho_e  (alpha_dict_ind) = tests(i).rho - tests(i).rho_real;
+        dict_alpha_n(alpha_dict_ind) = 1;
+        dict_beta_n (alpha_dict_ind) = 1;
+        dict_rho_n  (alpha_dict_ind) = 1;
+    end
+
+end
+
+figure; xlabel('Consigna de alpha (grados)'); ylabel('Error medio de alpha (grados)');title('Análisis de error de ángulo de cámara alpha');
+hold on; grid on;
+for key = keys(dict_alpha_e)'
+    dict_alpha_e(key) = dict_alpha_e(key) / dict_alpha_n(key);
+    plot(key,dict_alpha_e(key),'*b',LineStyle='-')
+end
+
+figure; xlabel('Consigna de alpha (grados)'); ylabel('Error medio de beta (grados)');title('Análisis de error de ángulo de cámara beta');
+hold on; grid on;
+for key = keys(dict_beta_e)'
+    dict_beta_e(key) = dict_beta_e(key) / dict_beta_n(key);
+    plot(key,dict_beta_e(key),'*b',LineStyle='-')
+end
+
+figure; xlabel('Consigna de alpha (grados)'); ylabel('Error medio de rho (metros)'); title('Análisis de error de distancia de cámara rho');
+hold on; grid on;
+for key = keys(dict_rho_e)'
+    dict_rho_e(key) = dict_rho_e(key) / dict_rho_n(key);
+    plot(key,dict_rho_e(key),'*b',LineStyle='-')
+end
+
 %% Cierre ROS
 
 % rosshutdown;
