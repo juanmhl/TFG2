@@ -106,6 +106,8 @@ for alpha = 30:5:80
             alpha_real = rad2deg(atan2(-T(2,3),T(3,3)));
             beta_real = rad2deg(atan2(-T(1,2),T(1,1)));
             rho_real = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 );
+            
+            mci_wam
 
             % Almacenamiento de resultados del test
             tests(k).alpha = alpha;
