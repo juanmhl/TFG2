@@ -89,18 +89,25 @@ pause(30)
 for alpha = 30:5:80
     for beta = -30:5:30
         for rho = 0.14:0.02:0.22
+            % Calculo de pose objetivo
             robotTobjetivo = robotTfulcro*PoseCamaraSimulador(rho,beta,alpha)*camTtcp;
             thRad = send_iksolution_to(robotTobjetivo);
+
+            % Pose objetivo tras ejecutar mci (la que se envia de verdad)
             robotTobjetivo_tras_mci = MCD_WAM(thRad);
 
             pause(5)
             
+            % Lectura de pose alcanzada (encoders y MCD) respecto al pto de
+            % fulcro
             [robotTobjetivo_real, thRad_real] = pose_wam();
             T = inv(robotTfulcro)*robotTobjetivo_real*inv(camTtcp)*rotZ(pi/2);
+            % Calculo de parametros alcanzados
             alpha_real = rad2deg(atan2(-T(2,3),T(3,3)));
             beta_real = rad2deg(atan2(-T(1,2),T(1,1)));
             rho_real = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 );
 
+            % Almacenamiento de resultados del test
             tests(k).alpha = alpha;
             tests(k).alpha_real = alpha_real;
             tests(k).beta = beta;
@@ -147,16 +154,25 @@ rho_real_cart = [];
 % T_real = [];
 
 
+% for i = 1:930
+%     alpha = [alpha, tests(i).alpha];
+%     alpha_real = [alpha_real, tests(i).alpha_real];
+%     beta = [beta, tests(i).beta];
+%     beta_real = [beta_real, tests(i).beta_real];
+%     rho = [rho, tests(i).rho];
+%     rho_real = [rho_real, tests(i).rho_real];
+%     rho_real_cart = [rho_real_cart, tests(i).rho_real_cart];
+% end
+
 for i = 1:930
     alpha = [alpha, tests(i).alpha];
-    alpha_real = [alpha_real, tests(i).alpha_real];
+    alpha_real = [alpha_real, tests(i).alpha_interm];
     beta = [beta, tests(i).beta];
-    beta_real = [beta_real, tests(i).beta_real];
+    beta_real = [beta_real, tests(i).beta_interm];
     rho = [rho, tests(i).rho];
     rho_real = [rho_real, tests(i).rho_real];
-    rho_real_cart = [rho_real_cart, tests(i).rho_real_cart];
+    rho_real_cart = [rho_real_cart, tests(i).rho_cart_interm];
 end
-
 
 
 %%
@@ -249,7 +265,7 @@ for i = 1:length(tests)
     if isKey(dict_alpha_e,alpha_dict_ind)
         dict_alpha_e(alpha_dict_ind) = dict_alpha_e(alpha_dict_ind) + tests(i).alpha - tests(i).alpha_real;
         dict_beta_e (alpha_dict_ind) = dict_beta_e (alpha_dict_ind) + tests(i).beta - tests(i).beta_real;
-        dict_rho_e  (alpha_dict_ind) = dict_rho_e  (alpha_dict_ind) + tests(i).rho - tests(i).rho_real;
+        dict_rho_e  (alpha_dict_ind) = dict_rho_e  (alpha_dict_ind) + tests(i).rho - tests(i).rho_real_cart;
         dict_alpha_n(alpha_dict_ind) = dict_alpha_n(alpha_dict_ind) + 1;
         dict_beta_n (alpha_dict_ind) = dict_beta_n (alpha_dict_ind) + 1;
         dict_rho_n  (alpha_dict_ind) = dict_rho_n  (alpha_dict_ind) + 1;
@@ -283,6 +299,44 @@ hold on; grid on;
 for key = keys(dict_rho_e)'
     dict_rho_e(key) = dict_rho_e(key) / dict_rho_n(key);
     plot(key,dict_rho_e(key),'*b',LineStyle='-')
+end
+
+%% Estudio del error de rho, tomando como base el error medio de rho en función de alpha, pero cuanto lo desplaza beta
+dict_rho_beta_alpha = dictionary([],[]);
+dict_rho_beta_alpha_n = dictionary([],[]);
+
+for i = 1:length(tests)
+    beta_dict_ind = tests(i).beta;
+
+    if isKey(dict_rho_beta_alpha,beta_dict_ind)
+        dict_rho_beta_alpha  (beta_dict_ind) = dict_rho_beta_alpha(beta_dict_ind) + ( (tests(i).rho - tests(i).rho_real_cart) - dict_rho_e(tests(i).alpha) );
+        dict_rho_beta_alpha_n(beta_dict_ind) = dict_rho_beta_alpha_n(beta_dict_ind) + 1;
+    else
+        dict_rho_beta_alpha  (beta_dict_ind) = (tests(i).rho - tests(i).rho_real_cart) - dict_rho_e(tests(i).alpha);
+        dict_rho_beta_alpha_n(beta_dict_ind) = 1;
+    end
+
+end
+
+figure; xlabel('Consigna de beta (grados)'); ylabel('Error medio de rho respecto a la media de error según alpha (metros)'); title('Análisis de error de distancia de cámara rho');
+hold on; grid on;
+for key = keys(dict_rho_beta_alpha)'
+    dict_rho_beta_alpha(key) = dict_rho_beta_alpha(key) / dict_rho_beta_alpha_n(key);
+    plot(key,dict_rho_beta_alpha(key),'*b',LineStyle='-')
+end
+
+%% Calculo de angulos intermedios (los realmente enviados)
+for i = 1:length(tests)
+    T = inv(robotTfulcro)*tests(i).T_tras_mci*inv(camTtcp)*rotZ(pi/2);
+    % Calculo de parametros alcanzados
+    alpha_interm    = rad2deg(atan2(-T(2,3),T(3,3)));
+    beta_interm     = rad2deg(atan2(-T(1,2),T(1,1)));
+    rho_interm      = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 );
+    rho_cart_interm = sqrt( T(1,4)^2 + T(2,4)^2 + T(3,4)^2 );
+    tests(i).alpha_interm    = alpha_interm;
+    tests(i).beta_interm     = beta_interm;
+    tests(i).rho_interm      = rho_interm;
+    tests(i).rho_cart_interm = rho_cart_interm;
 end
 
 %% Cierre ROS
