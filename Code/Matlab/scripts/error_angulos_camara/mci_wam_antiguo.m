@@ -1,4 +1,4 @@
-function [thRad, phiOut, th, thDeg, A, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, errorEstudiado, phiOut, th, thDeg, A, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -89,6 +89,11 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam_antiguo(T,elbowConfig,to
     
     Tnorm = rotX(alphaNorm)*rotZ(betaNorm);
     Rnorm = Tnorm(1:3,1:3);
+
+    proyeccion = Rnorm*DWpos;
+%     errorEstudiado = d - proyeccion(3);   % Insignificante
+%     errorEstudiado = proyeccion(1);     % Insignificante
+%     errorEstudiado = proyeccion(2);     % Insignificante
     
     %% Calcs for definig circles UJC, GC, LJC parameters
     
@@ -181,7 +186,14 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam_antiguo(T,elbowConfig,to
     yLJ = LJ(2);
     zLJ = LJ(3);
 
+    % Para la identificacion de la fuente de error
+%     errorEstudiado = L1 - norm(A);  % Insignificante
+%     errorEstudiado = L2 - norm(A'-DWpos);   % Insig
+%     errorEstudiado = d3 - norm(LJ);     % ERROR SIGNIFICATIVO DE 3MM !!!!!!
+%     errorEstudiado = d5 - norm(UJ'-DWpos);  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
+
     UJVWP = (UJ'-DWpos)/d5;
+%     UJVWP = (UJ'-DWpos)/norm(UJ'-DWpos);
     th2U = 2;
 
     % Ploteo de círculos generadores en otra figura
