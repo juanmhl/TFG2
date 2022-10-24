@@ -19,8 +19,8 @@ for alpha = 30:5:80
         for rho = 0.14:0.02:0.22
             % Calculo de pose objetivo
             robotTobjetivo = robotTfulcro*PoseCamaraSimulador(rho,beta,alpha)*camTtcp;
-%             thRad = mci_wam_antiguo(robotTobjetivo,'O',0.11,0,0,0);
-            thRad = mci_wam(robotTobjetivo,'O',0.11,0,0,0,0.4);
+            thRad = mci_wam_antiguo(robotTobjetivo,'O',0.11,0,0,0);
+%             thRad = mci_wam(robotTobjetivo,'O',0.11,0,0,0,0.4);
             
             % Pose objetivo tras ejecutar mci (la que se envia de verdad)
             robotTobjetivo_tras_mci = MCD_WAM(thRad);
