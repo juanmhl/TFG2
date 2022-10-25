@@ -1,4 +1,4 @@
-function [thRad, errorEstudiado, phiOut, th, thDeg, A, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -191,6 +191,18 @@ function [thRad, errorEstudiado, phiOut, th, thDeg, A, error] = mci_wam_antiguo(
 %     errorEstudiado = L2 - norm(A'-DWpos);   % Insig
 %     errorEstudiado = d3 - norm(LJ);     % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = d5 - norm(UJ'-DWpos);  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
+%     errorEstudiado = alph1 - atan2(norm(cross(A',DWpos)),dot(A',DWpos));    % Insig
+%     errorEstudiado = alph2 - atan2(norm(cross(DWpos,DWpos-A')),dot(DWpos,DWpos-A')); %Insignificante
+%     errorEstudiado = LBAUj - atan2(norm(cross(A'-DWpos,A'-UJ')),dot(A'-DWpos,A'-UJ'));
+%     errorEstudiado = LOALj - atan2(norm(cross(A',A'-LJ')),dot(A',A'-LJ'));
+%     errorEstudiado = LBAUj;
+%     errorEstudiado = LOALj;
+%     errorEstudiado = rad2deg(thU);
+%     errorEstudiado = dcUJ;
+%     errorEstudiado = norm(a3) - norm(A'-LJ');   % Insignificante
+%     errorEstudiado = norm(a4) - norm(A'-UJ');
+%     errorEstudiado = pi/2 - atan2(norm(cross([0,0,0]'-LJ',A'-LJ')),dot([0,0,0]'-LJ',A'-LJ'));   % ERROR SIGNIFICATIVO
+    errorEstudiado = pi/2 - atan2(norm(cross(DWpos-UJ',A'-UJ')),dot(DWpos-UJ',A'-UJ'));
 
     UJVWP = (UJ'-DWpos)/d5;
 %     UJVWP = (UJ'-DWpos)/norm(UJ'-DWpos);
@@ -357,13 +369,13 @@ function [thRad, errorEstudiado, phiOut, th, thDeg, A, error] = mci_wam_antiguo(
     th(6).JointName = 'wam/wrist_pitch_joint';
     th(7).JointName = 'wam/palm_yaw_joint';
     
-    th(1).JointPosition = wrapToPi(thDeg(1));
-    th(2).JointPosition = wrapToPi(thDeg(1));
-    th(3).JointPosition = wrapToPi(thDeg(1));
-    th(4).JointPosition = wrapToPi(thDeg(1));
-    th(5).JointPosition = wrapToPi(thDeg(1));
-    th(6).JointPosition = wrapToPi(thDeg(1));
-    th(7).JointPosition = wrapToPi(thDeg(1));
+    th(1).JointPosition = wrapToPi(thRad(1));
+    th(2).JointPosition = wrapToPi(thRad(2));
+    th(3).JointPosition = wrapToPi(thRad(3));
+    th(4).JointPosition = wrapToPi(thRad(4));
+    th(5).JointPosition = wrapToPi(thRad(5));
+    th(6).JointPosition = wrapToPi(thRad(6));
+    th(7).JointPosition = wrapToPi(thRad(7));
 
 end
 
