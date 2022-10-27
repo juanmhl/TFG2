@@ -1,3 +1,3 @@
 # ignore matlab autosave files
 *.asv
-/Code/Matlab/PruebaWebcam/CAEHdemo.mp4
+/Code/Matlab/scripts/PruebaWebcam/CAEHdemo.mp4
