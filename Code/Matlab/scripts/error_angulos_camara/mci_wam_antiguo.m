@@ -202,7 +202,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 %     errorEstudiado = norm(a3) - norm(A'-LJ');   % Insignificante
 %     errorEstudiado = norm(a4) - norm(A'-UJ');
 %     errorEstudiado = pi/2 - atan2(norm(cross([0,0,0]'-LJ',A'-LJ')),dot([0,0,0]'-LJ',A'-LJ'));   % ERROR SIGNIFICATIVO
-    errorEstudiado = pi/2 - atan2(norm(cross(DWpos-UJ',A'-UJ')),dot(DWpos-UJ',A'-UJ'));
+%     errorEstudiado = pi/2 - atan2(norm(cross(DWpos-UJ',A'-UJ')),dot(DWpos-UJ',A'-UJ'));
 
     UJVWP = (UJ'-DWpos)/d5;
 %     UJVWP = (UJ'-DWpos)/norm(UJ'-DWpos);
@@ -258,6 +258,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     H04 = transform(a1,alpha1,d1,th1) * transform(a2,alpha2,d2,th2) * ...
           transform(a3,alpha3,d3,th3) * transform(a4,alpha4,d4,th4);
+    errorEstudiado = norm(H04(1:3,4)-UJ');
     R04 = H04(1:3,1:3);
     
     Ptool = R04' * (DTpos-DWpos);
