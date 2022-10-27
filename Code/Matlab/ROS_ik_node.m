@@ -23,9 +23,10 @@ jointmsg = rosmessage(jointclient);
 jointmsg.Joints = [0 0 0 0 0 0 0];
 
 %% LLamada a servicios
-call(homeclient,homemsg);
+call(homeclient,homemsg);   % Enviar robot a posicion de reposo doblado
+
 jointmsg.Joints = [0 0 0 0 0 0 0];
-call(jointclient,jointmsg);
+call(jointclient,jointmsg); % Enviar robot a pose con todo extendido
 
 %% Movimiento a una posicion especifica
 camTtcp = [ -1 0  0 0;
