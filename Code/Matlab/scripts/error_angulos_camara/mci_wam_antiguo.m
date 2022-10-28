@@ -1,4 +1,5 @@
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
+% function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -166,6 +167,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     end
 
     %% Obtencion de posicion del codo sea fijo phi
+
+    phi = phiIn;
     
     xW = DWpos(1);
     yW = DWpos(2);
@@ -258,7 +261,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     H04 = transform(a1,alpha1,d1,th1) * transform(a2,alpha2,d2,th2) * ...
           transform(a3,alpha3,d3,th3) * transform(a4,alpha4,d4,th4);
-    errorEstudiado = norm(H04(1:3,4)-UJ');
+    errorEstudiado = norm(H04(1:3,4)-UJ'); % Distancia entre UJ calculada y UJ tras aplicar MCD
     R04 = H04(1:3,1:3);
     
     Ptool = R04' * (DTpos-DWpos);
