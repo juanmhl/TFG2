@@ -1,5 +1,5 @@
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
-% function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+% function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -160,7 +160,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     hayInterseccion = hayInterseccionth6 && hayInterseccionth2;
 
     if hayInterseccion
-        phi = wrapToPi(max(r));
+%         phi = wrapToPi(max(r));
+        phi = wrapTo2Pi(max(r));
     else
         phi = 0.3212;
         warning('No hay interseccion entre los rangos de las restricciones')
@@ -168,23 +169,26 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 
     %% Obtencion de posicion del codo sea fijo phi
 
-    phi = phiIn;
+%     phi = phiIn;
     
     xW = DWpos(1);
     yW = DWpos(2);
     zW = DWpos(3);
     
-    UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
+%     UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
+    UJ = Cnorm(RcUJ,dcUJ,phi)';
     xUJ = UJ(1);
     yUJ = UJ(2);
     zUJ = UJ(3);
     
-    A = Cnorm(Rc,dc,phi)'*Rnorm;
+%     A = Cnorm(Rc,dc,phi)'*Rnorm;
+    A = Cnorm(Rc,dc,phi)';
     xA = A(1);
     yA = A(2);
     zA = A(3);
     
-    LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
+%     LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
+    LJ = Cnorm(RcLJ,dcLJ,phi)';
     xLJ = LJ(1);
     yLJ = LJ(2);
     zLJ = LJ(3);
@@ -194,9 +198,11 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 %     errorEstudiado = L2 - norm(A'-DWpos);   % Insig
 %     errorEstudiado = d3 - norm(LJ);     % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = d5 - norm(UJ'-DWpos);  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
+%     errorEstudiado = d5 - norm(UJ'-[0 0 d]');  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = alph1 - atan2(norm(cross(A',DWpos)),dot(A',DWpos));    % Insig
 %     errorEstudiado = alph2 - atan2(norm(cross(DWpos,DWpos-A')),dot(DWpos,DWpos-A')); %Insignificante
 %     errorEstudiado = LBAUj - atan2(norm(cross(A'-DWpos,A'-UJ')),dot(A'-DWpos,A'-UJ'));
+    errorEstudiado = LBAUj - atan2(norm(cross(A'-[0 0 d]',A'-UJ')),dot(A'-[0 0 d]',A'-UJ'));
 %     errorEstudiado = LOALj - atan2(norm(cross(A',A'-LJ')),dot(A',A'-LJ'));
 %     errorEstudiado = LBAUj;
 %     errorEstudiado = LOALj;
@@ -204,8 +210,9 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 %     errorEstudiado = dcUJ;
 %     errorEstudiado = norm(a3) - norm(A'-LJ');   % Insignificante
 %     errorEstudiado = norm(a4) - norm(A'-UJ');
-%     errorEstudiado = pi/2 - atan2(norm(cross([0,0,0]'-LJ',A'-LJ')),dot([0,0,0]'-LJ',A'-LJ'));   % ERROR SIGNIFICATIVO
-%     errorEstudiado = pi/2 - atan2(norm(cross(DWpos-UJ',A'-UJ')),dot(DWpos-UJ',A'-UJ'));
+%     errorEstudiado = pi/2 - atan2(norm(cross([0,0,0]'-LJ',A'-LJ')),dot([0,0,0]'-LJ',A'-LJ'));   % ERROR SIGNIFICATIVO    % 3º
+%     errorEstudiado = pi/2 - atan2(norm(cross(DWpos-UJ',A'-UJ')),dot(DWpos-UJ',A'-UJ'));    % 3º
+%     errorEstudiado = pi/2 - atan2(norm(cross([0 0 d]'-UJ',A'-UJ')),dot([0 0 d]'-UJ',A'-UJ'));
 
     UJVWP = (UJ'-DWpos)/d5;
 %     UJVWP = (UJ'-DWpos)/norm(UJ'-DWpos);
@@ -261,7 +268,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     H04 = transform(a1,alpha1,d1,th1) * transform(a2,alpha2,d2,th2) * ...
           transform(a3,alpha3,d3,th3) * transform(a4,alpha4,d4,th4);
-    errorEstudiado = norm(H04(1:3,4)-UJ'); % Distancia entre UJ calculada y UJ tras aplicar MCD
+%     errorEstudiado = norm(H04(1:3,4)-UJ'); % Distancia entre UJ calculada y UJ tras aplicar MCD
     R04 = H04(1:3,1:3);
     
     Ptool = R04' * (DTpos-DWpos);
