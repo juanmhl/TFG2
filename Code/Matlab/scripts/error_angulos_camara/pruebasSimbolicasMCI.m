@@ -1,64 +1,59 @@
-% function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
-%mci_wam This function provides the analytical solution for the Barrett WAM
-%inverse kinematics problem given the target pose T and: 
-%   INPUTS:
-%   - T:    target pose, 4x4 hom trasf matrix
-%   - elbowConfiguration: 'out' / 'in'
-%   - toolOffset: length of tool offset in meters
-%   - plotGC: true if you want to plot generating circles for pose T
-%   - plotGC: true if you want to plot elbow position for pose T
-%   - plotGC: true if you want to plot transforms for pose T
-%   - H: max hight from the robot base for the elbow point LJ in meters
-%   OUTPUT:
-%   - thRad: vector with the solution for the ik problem for each
-%     articulation in rads, between -pi and pi
-%   - phiOut: elbow angle in GC chosen by the function
-%   - th: solution formatted for 3D visualization with urdf model
-%   - thDeg: vector with the solution for the ik problem for each
-%     articulation in degrees, between -180º and 180
-%   - A: position of the elbow with relative to the base
-%   - error:
-%       - 0: ok
-%       - 1: th2 restriction fails
-%       - 2: th4 restriction fails
-%       - 3: th6 restriction fails
-%       - 4: alpha2 restriction fails
+clear all
+camTtcp = [ -1 0  0 0;
+             0 1  0 0;
+             0 0 -1 0;
+             0 0  0 1
+          ];
 
-    error = 0;
+robotTfulcro = [ -1  0 0  0.583;
+                0 -1 0  0;
+                0  0 1 -0.118;
+                0  0 0  1
+             ];
+
+robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.2,0,20)*camTtcp;
+% [thRad, error_estudiado_ahora, phiOut, th, A, UJ, LJ] = mci_wam_antiguo(robotTobjetivo,'O',0.11,0,0,0);
+T = robotTobjetivo;
+elbowConfig = 'O';
+toolOffset = 0.11;
+plotGC = 0;
+plotElbowGC = 0;
+plotTransforms = 0;
+
+error = 0;
 
     %% DH1 parameters Barrett WAM
 
-    a1 = 0;         
-    a2 = 0;         
-    a3 = 0.045;     
-    a4 = -0.045;    
-    a5 = 0;
-    a6 = 0;
-    a7 = 0;
+    a1 = sym(0);         
+    a2 = sym(0);         
+    a3 = sym(0.045);     
+    a4 = sym(-0.045);    
+    a5 = sym(0);
+    a6 = sym(0);
+    a7 = sym(0);
     
-    alpha1 = -pi/2;
-    alpha2 = pi/2;
-    alpha3 = -pi/2;
-    alpha4 = pi/2;
-    alpha5 = -pi/2;
-    alpha6 = pi/2;
-    alpha7 = 0;
+    alpha1 = sym(-pi/2);
+    alpha2 = sym(pi/2);
+    alpha3 = sym(-pi/2);
+    alpha4 = sym(pi/2);
+    alpha5 = sym(-pi/2);
+    alpha6 = sym(pi/2);
+    alpha7 = sym(0);
     
-    d1 = 0;
-    d2 = 0;
-    d3 = 0.55;
-    d4 = 0;
-    d5 = 0.3;
-    d6 = 0;
-    d7 = 0.06;
+    d1 = sym(0);
+    d2 = sym(0);
+    d3 = sym(0.55);
+    d4 = sym(0);
+    d5 = sym(0.3);
+    d6 = sym(0);
+    d7 = sym(0.06);
 
-    ToolLength = d7 + toolOffset;
+    ToolLength = sym(d7 + toolOffset);
     
     
     %% Desired Tool and Wrist Position
-    DTpos = T(1:3,4);
-    TRz = T(1:3,3);
+    DTpos = sym(T(1:3,4));
+    TRz = sum(T(1:3,3));
     
     DWpos = DTpos - ToolLength*TRz;
     
@@ -98,13 +93,13 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     %% Calcs for definig circles UJC, GC, LJC parameters
     
-    L1 = sym(norm([d3 a3]));
-    L2 = sym(norm([d5 a4]));
+    L1 = norm([d3 a3]);
+    L2 = norm([d5 a4]);
     
-%     if ( (d^2+L2^2-L1^2)/(2*d*L2) > 1 )
-%         warning('No hay solución para alfa 2');
-%         error = 4;
-%     end
+    if ( (d^2+L2^2-L1^2)/(2*d*L2) > 1 )
+        warning('No hay solución para alfa 2');
+        error = 4;
+    end
 
     alph2 = acos((d^2+L2^2-L1^2)/(2*d*L2));
     alph1 = asin(L2*sin(alph2)/L1);
@@ -114,8 +109,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     Rc = L1*sin(alph1);
 %     Rc = L2*sin(alph2);
     
-    LBAUj = sym( pi/2 - atan(a3/d3) );
-    LOALj = sym( pi/2 - atan(norm(a4)/d5) );
+    LBAUj = sym(pi/2 - atan(a3/d3));
+    LOALj = sym(pi/2 - atan(norm(a4)/d5));
     
     if (elbowConfig == 'O')
         thU = pi - (pi/2 - alph2) - LBAUj;
@@ -137,17 +132,17 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     %% Obtencion de valores limite de phi segun restricciones de th2
     r = [11*pi/10, 3*pi/2];
     th2lim = 2;
-    A = double( RcLJ * Rnorm(1,3) );
-    B = double( -(RcLJ * Rnorm(2,3)) );
-    C = double( cos(th2lim)*d3 - dcLJ * Rnorm(3,3) );
+    A = double(RcLJ * Rnorm(1,3));
+    B = -double(RcLJ * Rnorm(2,3));
+    C = double(cos(th2lim)*d3 - dcLJ * Rnorm(3,3));
 
     [rth2, errorth2] = resolver_inecuacion(A,B,C,0,1,r);
 
     %% Obtencion de valores limite de phi segun restricciones de th6
     th6lim = pi/2;
-    A = double( RcUJ * (TRz(1)*Rnorm(1,1) + TRz(2)*Rnorm(1,2) + TRz(3)*Rnorm(1,3)) );
-    B = double( - ( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) ) );
-    C = double( -TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3)) );
+    A = double(RcUJ * (TRz(1)*Rnorm(1,1) + TRz(2)*Rnorm(1,2) + TRz(3)*Rnorm(1,3)));
+    B = - double( RcUJ * (TRz(1)*Rnorm(2,1) + TRz(2)*Rnorm(2,2) + TRz(3)*Rnorm(2,3)) );
+    C = double(-TRz(1)*(dcUJ*Rnorm(3,1)-DWpos(1)) - TRz(2)*(dcUJ*Rnorm(3,2)-DWpos(2)) - TRz(3)*(dcUJ*Rnorm(3,3)-DWpos(3)));
 
     [rth6, errorth6] = resolver_inecuacion(A,B,C,1,1,r);
 
@@ -176,19 +171,19 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     zW = DWpos(3);
     
 %     UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
-    UJ = double( Cnorm(RcUJ,dcUJ,phi)' );
+    UJ = Cnorm(RcUJ,dcUJ,phi)';
     xUJ = UJ(1);
     yUJ = UJ(2);
     zUJ = UJ(3);
     
 %     A = Cnorm(Rc,dc,phi)'*Rnorm;
-    A = double( Cnorm(Rc,dc,phi)' );
+    A = Cnorm(Rc,dc,phi)';
     xA = A(1);
     yA = A(2);
     zA = A(3);
     
 %     LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
-    LJ = double( Cnorm(RcLJ,dcLJ,phi)' );
+    LJ = Cnorm(RcLJ,dcLJ,phi)';
     xLJ = LJ(1);
     yLJ = LJ(2);
     zLJ = LJ(3);
@@ -261,9 +256,9 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     th3 = atan2(s3,c3);
     
     if elbowConfig == 'O'
-        th4 = double(thU+thL);
+        th4 = thU+thL;
     elseif elbowConfig == 'I'
-        th4 = -double(thU+thL);
+        th4 = -(thU+thL);
     end
     
     H04 = transform(a1,alpha1,d1,th1) * transform(a2,alpha2,d2,th2) * ...
@@ -388,7 +383,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     th(6).JointPosition = wrapToPi(thRad(6));
     th(7).JointPosition = wrapToPi(thRad(7));
 
-end
+
 
 
 %% Funciones

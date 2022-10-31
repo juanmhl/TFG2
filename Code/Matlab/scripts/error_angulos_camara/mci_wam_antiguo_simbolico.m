@@ -1,5 +1,5 @@
 % function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo_simbolico(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -29,36 +29,36 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 
     %% DH1 parameters Barrett WAM
 
-    a1 = 0;         
-    a2 = 0;         
-    a3 = 0.045;     
-    a4 = -0.045;    
-    a5 = 0;
-    a6 = 0;
-    a7 = 0;
+    a1 = sym(0);         
+    a2 = sym(0);         
+    a3 = sym(0.045);     
+    a4 = sym(-0.045);    
+    a5 = sym(0);
+    a6 = sym(0);
+    a7 = sym(0);
     
-    alpha1 = -pi/2;
-    alpha2 = pi/2;
-    alpha3 = -pi/2;
-    alpha4 = pi/2;
-    alpha5 = -pi/2;
-    alpha6 = pi/2;
-    alpha7 = 0;
+    alpha1 = sym(-pi/2);
+    alpha2 = sym(pi/2);
+    alpha3 = sym(-pi/2);
+    alpha4 = sym(pi/2);
+    alpha5 = sym(-pi/2);
+    alpha6 = sym(pi/2);
+    alpha7 = sym(0);
     
-    d1 = 0;
-    d2 = 0;
-    d3 = 0.55;
-    d4 = 0;
-    d5 = 0.3;
-    d6 = 0;
-    d7 = 0.06;
+    d1 = sym(0);
+    d2 = sym(0);
+    d3 = sym(0.55);
+    d4 = sym(0);
+    d5 = sym(0.3);
+    d6 = sym(0);
+    d7 = sym(0.06);
 
     ToolLength = d7 + toolOffset;
     
     
     %% Desired Tool and Wrist Position
-    DTpos = T(1:3,4);
-    TRz = T(1:3,3);
+    DTpos = sym(T(1:3,4));
+    TRz = sym(T(1:3,3));
     
     DWpos = DTpos - ToolLength*TRz;
     
@@ -327,8 +327,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     H07 = H04 * transform(a5,alpha5,d5,thRad(5)) * transform(a6,alpha6,d6,thRad(6)) ...
               * transform(a7,alpha7,d7,0);
 
-    origen = H07(1:3,1);
-    destino = T(1:3,1);
+    origen = double(H07(1:3,1));
+    destino = double(T(1:3,1));
 
     % Habria que volver a calcular th7
     th7 = -atan2(norm(cross(destino,origen)),-dot(destino,origen)) + pi/2;
@@ -338,7 +338,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     origen = H07(1:3,2);
     sq7 = dot(destinoX, origen); % Vector orientación n: T(1:3,1)
     cq7 = dot(destinoY, origen); % Vector orientación s: T(1:3,2)
-    q7 = atan2(sq7, cq7);
+    q7 = atan2(double(sq7), double(cq7));
     th7 = q7+pi/2;
     
     % Ploteo de transfromadas en su posicion final
@@ -356,7 +356,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     % Comprobacion de limites para cada articulacion
     noCumple = 0;
     for i = 1:7
-        if ( (thRad(i)<limitesRAD(i,1)) || (thRad(i)>limitesRAD(i,2)) )
+        if ( (double(thRad(i))<limitesRAD(i,1)) || (double(thRad(i))>limitesRAD(i,2)) )
             noCumple = 1;
             sprintf('no cumple la articulacion %d',i)
         end
@@ -379,6 +379,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     th(5).JointName = 'wam/wrist_yaw_joint';
     th(6).JointName = 'wam/wrist_pitch_joint';
     th(7).JointName = 'wam/palm_yaw_joint';
+
+    thRad = double(thRad);
     
     th(1).JointPosition = wrapToPi(thRad(1));
     th(2).JointPosition = wrapToPi(thRad(2));

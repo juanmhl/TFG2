@@ -1,3 +1,4 @@
+clear all
 camTtcp = [ -1 0  0 0;
              0 1  0 0;
              0 0 -1 0;
@@ -126,7 +127,7 @@ for alpha = 30:5:80
         for rho = 0.14:0.02:0.22
             % Calculo de pose objetivo
             robotTobjetivo = robotTfulcro*PoseCamaraSimulador(rho,beta,alpha)*camTtcp;
-            [thRad, error_estudiado_ahora, phiOut, th, A, UJ, LJ] = mci_wam_antiguo(robotTobjetivo,'O',0.11,0,0,0);
+            [thRad, error_estudiado_ahora, phiOut, th, A, UJ, LJ] = mci_wam_antiguo_simbolico(robotTobjetivo,'O',0.11,0,0,0);
 %             thRad = mci_wam(robotTobjetivo,'O',0.11,0,0,0,0.4);
             
             % Visualizacion
@@ -176,11 +177,15 @@ for alpha = 30:5:80
     end
 end
 
-% figure; plot(error_posicion); ylabel("Error de posición (m)"); xlabel('Muestras');
-figure; plot(rad2deg(error_estudiado)); xlabel('Muestras');
+figure; plot(error_posicion); ylabel("Error de posición (m)"); xlabel('Muestras');
+% figure; plot(rad2deg(error_estudiado)); xlabel('Muestras');
 % figure; plot(phis); title('Evolución temporal de \phi seleccionada por el algoritmo'); xlabel('Muestras'); ylabel('\phi (º)');
 % figure; plot(error_rho);        title('Error de \rho');      xlabel('Muestras'); ylabel('e_{\rho} [m]');
 % figure; plot(error_alpha);      title('Error de \alpha');    xlabel('Muestras'); ylabel('e_{\alpha} [º]');
 % figure; plot(error_beta);       title('Error de \beta');     xlabel('Muestras'); ylabel('e_{\beta} [º]');
 
 % figure; plot(phiIns,(media_error_estudiado)); title('Media del error estudiado para cada valor de \phi'); xlabel('\phi (º)'); ylabel('Media del error estudiado');
+
+%% Estimacion del tiempo de ejecucion de mci
+f = @() mci_wam_antiguo(robotTobjetivo,'O',0.11,0,0,0);
+timeit(f)
