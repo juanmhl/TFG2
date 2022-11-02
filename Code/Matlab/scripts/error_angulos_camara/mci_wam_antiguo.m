@@ -1,5 +1,5 @@
 % function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,grados)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -98,8 +98,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     %% Calcs for definig circles UJC, GC, LJC parameters
     
-    L1 = sym(norm([d3 a3]));
-    L2 = sym(norm([d5 a4]));
+    L1 = (norm([d3 a3]));
+    L2 = (norm([d5 a4]));
     
 %     if ( (d^2+L2^2-L1^2)/(2*d*L2) > 1 )
 %         warning('No hay solución para alfa 2');
@@ -114,12 +114,12 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     Rc = L1*sin(alph1);
 %     Rc = L2*sin(alph2);
     
-    LBAUj = sym( pi/2 - atan(a3/d3) );
-    LOALj = sym( pi/2 - atan(norm(a4)/d5) );
+    LBAUj = ( pi/2 - atan2(a3,d3) );
+    LOALj = ( pi/2 - atan2(norm(a4),d5) );
     
     if (elbowConfig == 'O')
-        thU = pi - (pi/2 - alph2) - LBAUj;
-        thL = pi - (pi/2 - alph1) - LOALj;
+        thU = pi - (pi/2 - alph2) - LBAUj + deg2rad(grados);
+        thL = pi - (pi/2 - alph1) - LOALj + deg2rad(grados);
         dcUJ = dc + sin(thU)*norm(a4);
         dcLJ = dc - sin(thL)*norm(a3);
         RcUJ = Rc + cos(thU)*norm(a4);
@@ -175,20 +175,20 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     yW = DWpos(2);
     zW = DWpos(3);
     
-%     UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
-    UJ = double( Cnorm(RcUJ,dcUJ,phi)' );
+    UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
+%     UJ = double( Cnorm(RcUJ,dcUJ,phi)' );
     xUJ = UJ(1);
     yUJ = UJ(2);
     zUJ = UJ(3);
     
-%     A = Cnorm(Rc,dc,phi)'*Rnorm;
-    A = double( Cnorm(Rc,dc,phi)' );
+    A = Cnorm(Rc,dc,phi)'*Rnorm;
+%     A = double( Cnorm(Rc,dc,phi)' );
     xA = A(1);
     yA = A(2);
     zA = A(3);
     
-%     LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
-    LJ = double( Cnorm(RcLJ,dcLJ,phi)' );
+    LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
+%     LJ = double( Cnorm(RcLJ,dcLJ,phi)' );
     xLJ = LJ(1);
     yLJ = LJ(2);
     zLJ = LJ(3);
@@ -196,13 +196,13 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     % Para la identificacion de la fuente de error
 %     errorEstudiado = L1 - norm(A);  % Insignificante
 %     errorEstudiado = L2 - norm(A'-DWpos);   % Insig
-%     errorEstudiado = d3 - norm(LJ);     % ERROR SIGNIFICATIVO DE 3MM !!!!!!
+    errorEstudiado = d3 - norm(LJ);     % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = d5 - norm(UJ'-DWpos);  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = d5 - norm(UJ'-[0 0 d]');  % ERROR SIGNIFICATIVO DE 3MM !!!!!!
 %     errorEstudiado = alph1 - atan2(norm(cross(A',DWpos)),dot(A',DWpos));    % Insig
 %     errorEstudiado = alph2 - atan2(norm(cross(DWpos,DWpos-A')),dot(DWpos,DWpos-A')); %Insignificante
 %     errorEstudiado = LBAUj - atan2(norm(cross(A'-DWpos,A'-UJ')),dot(A'-DWpos,A'-UJ'));
-    errorEstudiado = LBAUj - atan2(norm(cross(A'-[0 0 d]',A'-UJ')),dot(A'-[0 0 d]',A'-UJ'));
+%     errorEstudiado = LBAUj - atan2(norm(cross(A'-[0 0 d]',A'-UJ')),dot(A'-[0 0 d]',A'-UJ'));
 %     errorEstudiado = LOALj - atan2(norm(cross(A',A'-LJ')),dot(A',A'-LJ'));
 %     errorEstudiado = LBAUj;
 %     errorEstudiado = LOALj;

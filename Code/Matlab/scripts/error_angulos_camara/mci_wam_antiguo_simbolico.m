@@ -161,7 +161,7 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
 
     if hayInterseccion
 %         phi = wrapToPi(max(r));
-        phi = wrapTo2Pi(max(r));
+        phi = sym(wrapTo2Pi(max(r)));
     else
         phi = 0.3212;
         warning('No hay interseccion entre los rangos de las restricciones')
@@ -175,20 +175,20 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     yW = DWpos(2);
     zW = DWpos(3);
     
-%     UJ = Cnorm(RcUJ,dcUJ,phi)'*Rnorm;
-    UJ = double( Cnorm(RcUJ,dcUJ,phi)' );
+    UJ = ( Cnorm(RcUJ,dcUJ,phi)'*Rnorm );
+%     UJ = ( Cnorm(RcUJ,dcUJ,phi)' );
     xUJ = UJ(1);
     yUJ = UJ(2);
     zUJ = UJ(3);
     
-%     A = Cnorm(Rc,dc,phi)'*Rnorm;
-    A = double( Cnorm(Rc,dc,phi)' );
+    A = ( Cnorm(Rc,dc,phi)'*Rnorm );
+%     A = ( Cnorm(Rc,dc,phi)' );
     xA = A(1);
     yA = A(2);
     zA = A(3);
     
-%     LJ = Cnorm(RcLJ,dcLJ,phi)'*Rnorm;
-    LJ = double( Cnorm(RcLJ,dcLJ,phi)' );
+    LJ = ( Cnorm(RcLJ,dcLJ,phi)'*Rnorm );
+%     LJ = ( Cnorm(RcLJ,dcLJ,phi)' );
     xLJ = LJ(1);
     yLJ = LJ(2);
     zLJ = LJ(3);
@@ -296,8 +296,8 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
         createFRAME(H07,'r','H07');
         title('rotacion original')
     end
-    origen = H07(1:3,1);
-    destino = T(1:3,1);
+    origen = double( H07(1:3,1) );
+    destino = double( T(1:3,1) );
 
     th7 = -atan2(norm(cross(destino,origen)),dot(destino,origen)) + pi;
 
