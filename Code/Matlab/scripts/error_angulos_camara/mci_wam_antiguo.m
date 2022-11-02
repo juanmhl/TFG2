@@ -1,5 +1,5 @@
 % function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,phiIn)
-function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,grados)
+function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_antiguo(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms)
 %mci_wam This function provides the analytical solution for the Barrett WAM
 %inverse kinematics problem given the target pose T and: 
 %   INPUTS:
@@ -118,12 +118,12 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     LOALj = ( pi/2 - atan2(norm(a4),d5) );
     
     if (elbowConfig == 'O')
-        thU = pi - (pi/2 - alph2) - LBAUj + deg2rad(grados);
-        thL = pi - (pi/2 - alph1) - LOALj + deg2rad(grados);
-        dcUJ = dc + sin(thU)*norm(a4);
-        dcLJ = dc - sin(thL)*norm(a3);
-        RcUJ = Rc + cos(thU)*norm(a4);
-        RcLJ = Rc + cos(thL)*norm(a3);
+        thU = pi - (pi/2 - alph2) - LBAUj % + deg2rad(grados);
+        thL = pi - (pi/2 - alph1) - LOALj % + deg2rad(grados);
+        dcUJ = dc + sin(thU)*(norm(a4)-0e-3);
+        dcLJ = dc - sin(thL)*(norm(a3)-0e-3);
+        RcUJ = Rc + cos(thU)*(norm(a4)-0e-3);
+        RcLJ = Rc + cos(thL)*(norm(a3)-0e-3);
     
     elseif (elbowConfig == 'I')
         thU = LBAUj - (pi/2 - alph2);
