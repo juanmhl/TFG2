@@ -262,6 +262,16 @@ function [thRad, errorEstudiado, phiOut, th, A, UJ, LJ, thDeg, error] = mci_wam_
     
     if elbowConfig == 'O'
         th4 = double(thU+thL);
+%         % Alternativa
+%         v1 = UJ'-A';
+%         v2 = A';
+%         v3 = LJ'-A';
+%         v4 = A'-DWpos;
+% %         angulo1 = atan2(norm(cross(v1,v2)),dot(v1,v2));
+% %         angulo2 = atan2(norm(cross(v3,v4)),dot(v3,v4));
+%         angulo1 = acos(norm(dot(v1,v2)/(norm(v1)*norm(v2))));
+%         angulo2 = acos(norm(dot(v3,v4)/(norm(v3)*norm(v4))));
+%         th4 = pi - alph1 - alph2 - angulo1 - angulo2;
     elseif elbowConfig == 'I'
         th4 = -double(thU+thL);
     end
