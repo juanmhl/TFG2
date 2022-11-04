@@ -5,8 +5,8 @@ clear all
 rosinit
 
 % Modelo urdf del robot WAM (visualizacion)
-% global wamTree;
-% wamTree = importrobot("mirobot.urdf");
+global wamTree;
+wamTree = importrobot("mirobot.urdf");
 
 %% Creacion de clientes de servicios y suscriptores de topics
 homeclient = rossvcclient("/wam/go_home");

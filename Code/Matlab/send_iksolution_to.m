@@ -2,7 +2,7 @@ function thRad = send_iksolution_to(T)
 
     global jointclient;
     global jointmsg;
-%     global wamTree;
+    global wamTree;
 
     [thRad] = mci_wam(T,'O',0.11,0,0,0,0.4);
 
