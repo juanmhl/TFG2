@@ -195,14 +195,13 @@ for alpha = 30:5:80
             % Pose objetivo tras ejecutar mci (la que se envia de verdad)
             robotTobjetivo_tras_mci = MCD_WAM(thRad);
 
-            [configSoln,solnInfo] = ik('wam/wrist_palm_stump_link',desp([0 0 altura])*robotTobjetivo*desp([0 0 -0.11]),weights,semilla);
+%             [configSoln,solnInfo] = ik('wam/wrist_palm_stump_link',desp([0 0 altura])*robotTobjetivo*desp([0 0 -0.11]),weights,semilla);
 
             restriccionPose.TargetTransform = desp([0 0 altura])*robotTobjetivo*desp([0 0 -0.11]);
-            limitJointChange.Bounds = [thRad'-0.05, ...
-                                       thRad'+0.05
-                                      ];
-            
-%             [configSoln,solnInfo] = gik(semilla,restriccionPose,limitJointChange);
+            limitJointChange.Bounds(1,1) = thRad(1)-0.05;
+            limitJointChange.Bounds(1,2) = thRad(1)+0.05;
+
+            [configSoln,solnInfo] = gik(semilla,restriccionPose,limitJointChange);
             for i = 1:7
                 thRad_tras_numIK(i) = configSoln(i).JointPosition;
             end
