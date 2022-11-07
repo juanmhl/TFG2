@@ -1,5 +1,5 @@
 %% pruebas solver numerico
-
+clear all
 wamTree = importrobot("mirobot.urdf");
 ik = inverseKinematics('RigidBodyTree',wamTree);
 weights = [0.25 0.25 0.25 1 1 1];
@@ -63,4 +63,43 @@ robotTobjetivo_tras_numIK =  MCD_WAM(thRad_tras_numIK);
 
 error_tras_mci = norm(robotTobjetivo(1:3,4)-robotTobjetivo_tras_mci(1:3,4))
 error_tras_solver = norm(robotTobjetivo(1:3,4)-robotTobjetivo_tras_numIK(1:3,4))
+
+%% Más pruebas, con constraints para que converja a solucion cercana
+
+% gik = generalizedInverseKinematics('RigidBodyTree', wamTree, ...
+%     'ConstraintInputs', {'pose','cartesian'})
+gik = generalizedInverseKinematics('RigidBodyTree', wamTree, ...
+    'ConstraintInputs', {'pose','joint'})
+
+efectorFinal = 'wam/wrist_palm_stump_link';
+restriccionPose = constraintPoseTarget(efectorFinal);
+restriccionPose.TargetTransform = desp([0 0 altura])*robotTobjetivo*desp([0 0 -0.11]);
+
+codo = 'wam/wrist_yaw_link';
+restriccionCodo = constraintCartesianBounds(codo);
+restriccionCodo.Bounds = [A(1)-0.2, A(1)+0.2; ...
+                          A(2)-0.2, A(2)+0.2; ...
+                          A(3)-0.2, A(3)+0.2  ...
+                         ];
+
+limitJointChange = constraintJointBounds(wamTree);
+limitJointChange.Bounds = [thRad'-0.1, ...
+                           thRad'+0.1
+                          ];
+
+% [solutionNueva, solutionNuevaInfo] = gik(semilla,restriccionPose,restriccionCodo)
+[solutionNueva, solutionNuevaInfo] = gik(semilla,restriccionPose,limitJointChange)
+figure; show(wamTree,solutionNueva);
+
+
+for i = 1:7
+    thRad_tras_numIK(i) = configSoln(i).JointPosition;
+end
+
+robotTobjetivo_tras_numIK_nuevo =  MCD_WAM(thRad_tras_numIK);
+
+error_tras_mci = norm(robotTobjetivo(1:3,4)-robotTobjetivo_tras_mci(1:3,4))
+error_tras_solver = norm(robotTobjetivo(1:3,4)-robotTobjetivo_tras_numIK_nuevo(1:3,4))
+
+
 
