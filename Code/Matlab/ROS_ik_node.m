@@ -4,9 +4,28 @@ clear all
 % Creacion del ROS Master
 rosinit
 
-% Modelo urdf del robot WAM (visualizacion)
+% Modelo urdf del robot WAM (visualizacion y mci numerico)
 global wamTree;
 wamTree = importrobot("mirobot.urdf");
+global ik;
+ik = inverseKinematics('RigidBodyTree',wamTree);
+th(1).JointName = 'wam/base_yaw_joint';
+th(2).JointName = 'wam/shoulder_pitch_joint';
+th(3).JointName = 'wam/shoulder_yaw_joint';
+th(4).JointName = 'wam/elbow_pitch_joint';
+th(5).JointName = 'wam/wrist_yaw_joint';
+th(6).JointName = 'wam/wrist_pitch_joint';
+th(7).JointName = 'wam/palm_yaw_joint';
+th(1).JointPosition = 0;
+th(2).JointPosition = 0;
+th(3).JointPosition = 0;
+th(4).JointPosition = 0;
+th(5).JointPosition = 0;
+th(6).JointPosition = 0;
+th(7).JointPosition = 0;
+transform = getTransform(wamTree,th,'wam/shoulder_yaw_link');
+global altura;
+altura = transform(3,4);
 
 %% Creacion de clientes de servicios y suscriptores de topics
 homeclient = rossvcclient("/wam/go_home");
