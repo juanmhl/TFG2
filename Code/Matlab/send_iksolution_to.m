@@ -5,6 +5,9 @@ function thRad = send_iksolution_to(T)
 %     global wamTree;
     global ik;
     global altura;
+    global gik;
+    global restriccionPose;
+    global limitJointChange;
 
     a1 = 0;         
     a2 = 0;         
@@ -38,8 +41,13 @@ function thRad = send_iksolution_to(T)
     [thRad, phiOut, semilla] = mci_wam(T,'O',longTool,0,0,0,0.4);
 
     % MCI numerico
-    weights = [0.25 0.25 0.25 1 1 1];
-    [configSoln,solnInfo] = ik('wam/wrist_palm_stump_link',desp([0 0 altura])*T*desp([0 0 -longTool]),weights,semilla);
+%     weights = [0.25 0.25 0.25 1 1 1];
+%     [configSoln,solnInfo] = ik('wam/wrist_palm_stump_link',desp([0 0 altura])*T*desp([0 0 -longTool]),weights,semilla);
+    
+    restriccionPose.TargetTransform = desp([0 0 altura])*T*desp([0 0 -longTool]);
+    limitJointChange.Bounds(1,1) = thRad(1)-0.05;
+    limitJointChange.Bounds(1,2) = thRad(1)+0.05;
+    [configSoln,solnInfo] = gik(semilla,restriccionPose,limitJointChange);
 
     for i = 1:7
         thRad_tras_numIK(i) = configSoln(i).JointPosition;
