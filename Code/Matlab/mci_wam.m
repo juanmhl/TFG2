@@ -143,6 +143,7 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
     C = H - dcLJ*Rnorm(3,3);
 
     [rH, errorH] = resolver_inecuacion(A,B,C,0,0,r);
+    error = errorH;
 
     %% Obtencion de valores limite de phi segun restricciones de th6
     th6lim = pi/2;    
@@ -338,6 +339,7 @@ function [thRad, phiOut, th, thDeg, A, error] = mci_wam(T,elbowConfig,toolOffset
 
     if noCumple
         display('NO SE CUMPLEN LAS RESTRICCIONES DE ANGULO')
+        error = 15;
     else
         display('SI SE CUMPLEN LAS RESTRICCIONES DE ANGULO')
     end

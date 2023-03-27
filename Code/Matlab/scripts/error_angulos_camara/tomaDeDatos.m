@@ -16,35 +16,38 @@ clear all
 % Creacion del ROS Master
 rosinit
 
-%% Creacion de clientes de servicios y suscriptores de topics
-homeclient = rossvcclient("/wam/go_home");
-global jointclient;
-jointclient = rossvcclient("/wam/joint_move");
-global posesub;
-posesub = rossubscriber("/wam/pose");
-global jointsub;
-jointsub = rossubscriber("/wam/joint_states");
+% %% Creacion de clientes de servicios y suscriptores de topics
+% homeclient = rossvcclient("/wam/go_home");
+% global jointclient;
+% jointclient = rossvcclient("/wam/joint_move");
+% global posesub;
+% posesub = rossubscriber("/wam/pose");
+% global jointsub;
+% jointsub = rossubscriber("/wam/joint_states");
+% 
+% %% Creacion de mensajes para los servicios
+% homemsg = rosmessage(homeclient);
+% global jointmsg;
+% jointmsg = rosmessage(jointclient);
+% 
+% jointmsg.Joints = [0 0 0 0 0 0 0];
+% 
+% %% Inicializacion de parametros
+% 
+% camTtcp = [ -1 0  0 0;
+%              0 1  0 0;
+%              0 0 -1 0;
+%              0 0  0 1
+%           ];
+% 
+% robotTfulcro = [ -1  0 0  0.583;
+%                 0 -1 0  0;
+%                 0  0 1 -0.118;
+%                 0  0 0  1
+%              ];
 
-%% Creacion de mensajes para los servicios
-homemsg = rosmessage(homeclient);
-global jointmsg;
-jointmsg = rosmessage(jointclient);
-
-jointmsg.Joints = [0 0 0 0 0 0 0];
-
-%% Inicializacion de parametros
-
-camTtcp = [ -1 0  0 0;
-             0 1  0 0;
-             0 0 -1 0;
-             0 0  0 1
-          ];
-
-robotTfulcro = [ -1  0 0  0.583;
-                0 -1 0  0;
-                0  0 1 -0.118;
-                0  0 0  1
-             ];
+%%
+ROS_ik_node;
 
 %% Primera prueba: envio de una posicion y lectura de encoders
 robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.22, ...  % rho, metros, cuanto sale
@@ -68,17 +71,17 @@ rho_real_2 = sqrt( T(1,4)^2 + T(2,4)^2 + T(3,4)^2 )
 %% Test automatizado:
 
 tests = [];
-k = 0;
+k = 1;
 
 % Posicion inicial para el test
 robotTobjetivo = robotTfulcro*PoseCamaraSimulador(0.14,-30,30)*camTtcp;
 send_iksolution_to(robotTobjetivo);
-pause(30)
+pause(10)
 
 % Recorrido de consignas
-for alpha = 30:5:80
-    for beta = -30:5:30
-        for rho = 0.14:0.02:0.22
+for alpha = 20:20:80
+    for beta = -30:15:30
+        for rho = 0.14:0.04:0.22
             % Calculo de pose objetivo
             robotTobjetivo = robotTfulcro*PoseCamaraSimulador(rho,beta,alpha)*camTtcp;
             thRad = send_iksolution_to(robotTobjetivo);
@@ -86,7 +89,17 @@ for alpha = 30:5:80
             % Pose objetivo tras ejecutar mci (la que se envia de verdad)
             robotTobjetivo_tras_mci = MCD_WAM(thRad);
 
-            pause(5)
+%             pause(4)
+
+            if rho==0.14
+                if beta == -30
+                    pause(10);
+                else
+                    pause(6);
+                end
+            else
+                pause(4);
+            end
             
             % Lectura de pose alcanzada (encoders y MCD) respecto al pto de
             % fulcro
@@ -96,6 +109,7 @@ for alpha = 30:5:80
             alpha_real = rad2deg(atan2(-T(2,3),T(3,3)));
             beta_real = rad2deg(atan2(-T(1,2),T(1,1)));
             rho_real = sqrt( (T(2,4)/T(3,3))^2 + T(1,4)^2 );
+            rho_real_cart = norm(T(1:3,4));
 
             % Almacenamiento de resultados del test
             tests(k).alpha = alpha;
@@ -103,22 +117,24 @@ for alpha = 30:5:80
             tests(k).beta = beta;
             tests(k).beta_real = beta_real;
             tests(k).rho = rho;
-            tests(k).rho_real = rho_real
+            tests(k).rho_real = rho_real;
+            tests(k).rho_real_cart = rho_real_cart;
             tests(k).T_deseada = robotTobjetivo;
             tests(k).T_tras_mci = robotTobjetivo_tras_mci;
             tests(k).T_real = T;
             tests(k).thRad_deseada = thRad;
             tests(k).thRad_real = thRad_real;
-
+            error = rho-rho_real_cart;
+            fprintf('Error de rho: %d\n', error)
             k = k+1;
 
         end
 
-        pause(10)
+%         pause(10)
 
     end
 
-    pause(10)
+%     pause(10)
 
 end
 

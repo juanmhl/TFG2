@@ -46,28 +46,28 @@ rho_real_cart = [];
 % T_tras_mci = [];
 % T_real = [];
 
-% % Descomentar para analizar error entre consigna y parametros leidos por
-% % encoder
-% for i = 1:930
-%     alpha = [alpha, tests(i).alpha];
-%     alpha_real = [alpha_real, tests(i).alpha_real];
-%     beta = [beta, tests(i).beta];
-%     beta_real = [beta_real, tests(i).beta_real];
-%     rho = [rho, tests(i).rho];
-%     rho_real = [rho_real, tests(i).rho_real];
-%     rho_real_cart = [rho_real_cart, tests(i).rho_real_cart];
-% end
-
-% Descomentar para analizar error entre consigna y parametros tras mci
-for i = 1:930
+% Descomentar para analizar error entre consigna y parametros leidos por
+% encoder
+for i = 1:60
     alpha = [alpha, tests(i).alpha];
-    alpha_real = [alpha_real, tests(i).alpha_interm];
+    alpha_real = [alpha_real, tests(i).alpha_real];
     beta = [beta, tests(i).beta];
-    beta_real = [beta_real, tests(i).beta_interm];
+    beta_real = [beta_real, tests(i).beta_real];
     rho = [rho, tests(i).rho];
     rho_real = [rho_real, tests(i).rho_real];
-    rho_real_cart = [rho_real_cart, tests(i).rho_cart_interm];
+    rho_real_cart = [rho_real_cart, tests(i).rho_real_cart];
 end
+
+% % Descomentar para analizar error entre consigna y parametros tras mci
+% for i = 1:930
+%     alpha = [alpha, tests(i).alpha];
+%     alpha_real = [alpha_real, tests(i).alpha_interm];
+%     beta = [beta, tests(i).beta];
+%     beta_real = [beta_real, tests(i).beta_interm];
+%     rho = [rho, tests(i).rho];
+%     rho_real = [rho_real, tests(i).rho_real];
+%     rho_real_cart = [rho_real_cart, tests(i).rho_cart_interm];
+% end
 
 
 %%
@@ -82,9 +82,9 @@ e_rho = rho - rho_real_cart;
 e_alpha(66)=0;
 e_beta(66)=0;
 
-figure; plot(e_alpha); ylabel('Error en \alpha (º)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara \alpha');
-figure; plot(e_beta); ylabel('Error en \beta (º)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara \beta');
-figure; plot(e_rho); ylabel('Error en \rho (m)'); grid on; xlabel('Muestras'); title('Análisis de error de distancia de cámara \rho');
+figure; plot(e_alpha); ylabel('Error en \alpha (º)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara \alpha'); fontsize(gca,20,"pixels");
+figure; plot(e_beta); ylabel('Error en \beta (º)'); grid on; xlabel('Muestras'); title('Análisis de error de ángulo de cámara \beta'); fontsize(gca,20,"pixels");
+figure; plot(e_rho); ylabel('e_{\rho} (m)'); grid on; xlabel('Muestras'); title('Análisis de error teórico de distancia \rho tras MCI'); fontsize(gca,20,"pixels");
 
 
 e_alpha_mean = mean(e_alpha)

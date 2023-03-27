@@ -14,6 +14,7 @@ function [r, error] = resolver_inecuacion(A,B,C,invertir,mayorQue,lims)
         if(mayorQue)    % El signo de la inecuacion es >=
             if ( A*cos(phi)-B*sin(phi) > C )    % Si cumple para todo angulo
                 r = [0, 2*pi];
+                error = 16;
             else                                % No cumple para ningun angulo
                 r = [0, 0];
                 error = -1;     % Flag que señaliza que no hay solucion posible
@@ -21,6 +22,7 @@ function [r, error] = resolver_inecuacion(A,B,C,invertir,mayorQue,lims)
         else            % El signo de la inecuacion es <=
             if ( A*cos(phi)-B*sin(phi) < C )    % Si cumple para todo angulo
                 r = [0, 2*pi];
+                error = 16;
             else                                % No cumple para ningun angulo
                 r = [0, 0];
                 error = -1;     % Flag que señaliza que no hay solucion posible

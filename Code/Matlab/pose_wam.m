@@ -1,4 +1,4 @@
- function [T,pos,quaternion] = pose_wam
+%  function [T,pos,quaternion] = pose_wam
 %     global posesub;
 %     posemsg = receive(posesub);
 % 

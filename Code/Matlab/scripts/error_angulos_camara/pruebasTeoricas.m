@@ -224,7 +224,8 @@ for alpha = 30:5:80
             Rz3 = H03(1:3,3);
 %                 error_estudiado_ahora = rad2deg(atan2(norm(cross(Vplano,Rz3)),dot(Vplano,Rz3)));    % Angulo entre Z3, que sale del codo, y plano que contiene todo
             
-            T = inv(robotTfulcro)*robotTobjetivo_tras_mci*inv(camTtcp)*rotZ(pi/2);
+%             T = inv(robotTfulcro)*robotTobjetivo_tras_mci*inv(camTtcp)*rotZ(pi/2);
+            T = inv(robotTfulcro)*robotTobjetivo_tras_numIK*inv(camTtcp)*rotZ(pi/2);
             % Calculo de parametros alcanzados
             alpha_tras_mci = rad2deg(atan2(-T(2,3),T(3,3)));
             beta_tras_mci = rad2deg(atan2(-T(1,2),T(1,1)));
@@ -318,10 +319,10 @@ end
 % figure; plot(error_posicion_tras_mci); ylabel("Error de posición tras mci (m)"); xlabel('Muestras');
 % figure; plot(error_posicion_tras_numIK); ylabel("Error de posición tras numIK (m)"); xlabel('Muestras');
 
-figure; plot((error_estudiado)); xlabel('Muestras');
+figure; plot(error_estudiado); ylabel('dist(A_{esperada},A_{obtenida}) (m)'); grid on; xlabel('Muestras'); title('Desplazamiento de A tras la corrección del MCI'); fontsize(gca,20,"pixels");
 
 % figure; plot(phis); title('Evolución temporal de \phi seleccionada por el algoritmo'); xlabel('Muestras'); ylabel('\phi (º)');
-% figure; plot(error_rho);        title('Error de \rho');      xlabel('Muestras'); ylabel('e_{\rho} [m]');
+figure; plot(error_rho); ylabel('e_{\rho} (m)'); grid on; xlabel('Muestras'); title('Análisis de error teórico de distancia \rho corregido'); fontsize(gca,20,"pixels");
 % figure; plot(error_alpha);      title('Error de \alpha');    xlabel('Muestras'); ylabel('e_{\alpha} [º]');
 % figure; plot(error_beta);       title('Error de \beta');     xlabel('Muestras'); ylabel('e_{\beta} [º]');
 

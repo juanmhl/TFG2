@@ -62,10 +62,10 @@ jointmsg = rosmessage(jointclient);
 jointmsg.Joints = [0 0 0 0 0 0 0];
 
 %% LLamada a servicios
-% call(homeclient,homemsg);   % Enviar robot a posicion de reposo doblado
+call(homeclient,homemsg);   % Enviar robot a posicion de reposo doblado
 % 
-% jointmsg.Joints = [0 0 0 0 0 0 0];
-% call(jointclient,jointmsg); % Enviar robot a pose con todo extendido
+jointmsg.Joints = [0 0 0 0 0 0 0];
+call(jointclient,jointmsg); % Enviar robot a pose con todo extendido
 
 %% Movimiento a una posicion especifica
 camTtcp = [ -1 0  0 0;
@@ -79,9 +79,9 @@ robotTfulcro = [ -1  0 0  0.583;
                 0  0 1 -0.118;
                 0  0 0  1
              ];
-
-% T = robotTfulcro*PoseCamaraSimulador(0.2,-20,35)*camTtcp;
-% send_iksolution_to(T);
+%%
+T = robotTfulcro*PoseCamaraSimulador(0.18,0,20)*camTtcp;
+send_iksolution_to(T);
 
 %% Cierre ROS
 

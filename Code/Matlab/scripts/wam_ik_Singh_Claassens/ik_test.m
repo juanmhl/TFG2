@@ -1,4 +1,4 @@
-lear all
+clear all
 close all
 clc
 wamTree = importrobot("mirobot.urdf");
