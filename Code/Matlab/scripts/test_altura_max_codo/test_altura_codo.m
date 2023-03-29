@@ -50,7 +50,7 @@ limiteLargoAlto = 0.22;
 %     end
 % end
 % num_errores = sum(errores==15)
-
+%%
 for H = H_min:0.01:H_max
     errores = [];
     for largo = limiteLargoBajo:0.02:limiteLargoAlto
@@ -63,6 +63,30 @@ for H = H_min:0.01:H_max
         end
     end
     num_errores = [num_errores; H sum(errores==15)]
+end
+
+num_errores
+
+%%
+% H = .25;
+H_min = 0.2;
+H_max = 0.6;
+
+errores = [];
+num_errores = [];
+
+for H = H_min:0.01:H_max
+    errores = [];
+    for largo = limiteLargoBajo:0.02:limiteLargoAlto
+        for alpha = limiteVerticalBajo:10:limiteVerticalAlto
+            for beta = -limiteHorizontal:10:limiteHorizontal
+                T = robotTfulcro*PoseCamaraSimulador(largo,beta,alpha)*camTtcp;
+                [thRad, ~, ~, ~, ~, error] = mci_wam(T,elbowConfig,toolOffset,plotGC,plotElbowGC,plotTransforms,H);
+                errores = [errores, error];
+            end
+        end
+    end
+    num_errores = [num_errores; H sum(errores==16)];
 end
 
 num_errores
